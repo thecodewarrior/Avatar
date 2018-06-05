@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <script src="./avatar.js"></script>
+        <link rel="stylesheet" href="./avatar.css">
+    </head>
+    <body>
+        <svg id="main-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                           x="0px" y="0px" width="1000px" height="1000px" viewBox="-500 -500 1000 1000" xml:space="preserve">
+            <rect id="background" x="-10000" y="-10000" width="20000" height="20000" fill="#000000"/>
+
+            <clipPath id="event-horizon-front-mask">
+                <rect x="-100" y="-100" width="200" height="100" fill="#F00"/>
+                <ellipse cx="0" cy="0" rx="30" ry="6.66666666666" fill="#F00"/>
+            </clipPath>
+
+            <g id="main-avatar" transform="rotate(-45)">
+                <circle id="halo" cx="0" cy="0" r="40" fill="#FFF"/>
+
+                <circle id="event-horizon-back" cx="0" cy="0" r="30" fill="#000"/>
+
+                <ellipse id="accretion-disk" cx="0" cy="0" rx="90" ry="20" fill="#FFF"/>
+
+                <circle id="event-horizon-front" cx="0" cy="0" r="30" fill="#000" clip-path="url(#event-horizon-front-mask)"/>
+            </g>
+
+            <g id="orbits" transform="rotate(-45)">
+                <script>
+createOrbitingBody(1, 150, 6, -3/16, 0)
+document.currentScript.parentNode.removeChild(document.currentScript)
+                </script>
+                <script>
+createOrbitingBody(2, 250, 10, 5/32, 0)
+document.currentScript.parentNode.removeChild(document.currentScript)
+                </script>
+                <script>
+createOrbitingBody(3, 525, 8, 11/16, 0)
+document.currentScript.parentNode.removeChild(document.currentScript)
+                </script>
+            </g>
+
+            <g id="guides">
+                <circle id="round-bounds" cx="0" cy="0" r="100" stroke="#00F" stroke-width="1" fill="none"/>
+                <rect id="square-bounds" x="-80" y="-80" width="160" height="160" stroke="#00F" stroke-width="1" fill="none"/>
+                <rect id="twitter-banner-bounds" x="-450" y="-150" width="900" height="300" stroke="#00F" stroke-width="1" fill="none"/>
+            </g>
+        </svg>
+        <hr/>
+
+        <textarea class="svg-text"></textarea>
+
+        <div id="export-container">
+        </div>
+    </body>
+</html>

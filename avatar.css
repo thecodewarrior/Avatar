@@ -1,0 +1,12 @@
+.export {
+    display: inline-block;
+    margin: 5px;
+}
+
+.export img {
+    height: 200px;
+}
+
+.export h3 {
+    margin: 0;
+}
