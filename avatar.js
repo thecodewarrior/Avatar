@@ -52,6 +52,8 @@ window.onload = function() {
     var guides = guideless.getElementById('guides')
     guides.parentNode.removeChild(guides)
 
+    document.getElementById('svg-text').textContent = guideless.outerHTML
+
     container.appendChild(exportImage('Full', guideless, {
         x: -500, y: -500,
         w: 1000, h: 1000,
