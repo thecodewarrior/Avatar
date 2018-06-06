@@ -3,12 +3,20 @@
     margin: 5px;
 }
 
-.export img {
+.export-image {
     height: 200px;
 }
 
-.export h3 {
+.export-svg-animation-preview > svg {
+    height: 200px;
+}
+
+.export-name {
     margin: 0;
+}
+
+.export-generate-video {
+    display: block;
 }
 
 #svg-text {
@@ -16,3 +24,23 @@
     padding: 5px;
     margin: 5px;
 }
+
+#accretion-disk-black {
+    stroke: white;
+    stroke-width: 200;
+    fill: none;
+    /*stroke-dasharray: 282.74328;*/
+    stroke-dasharray: 628.318530718;
+    animation: accretion-disk-wipe 3s linear infinite;
+}
+
+@keyframes accretion-disk-wipe {
+    0% {
+    /*stroke-dashoffset: 282.74328;*/
+    stroke-dashoffset: 628.318530718;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+

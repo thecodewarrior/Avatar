@@ -1,8 +1,11 @@
 <html>
     <head>
         <meta charset="utf-8"/>
-        <script src="./avatar.js"></script>
-        <link rel="stylesheet" href="./avatar.css">
+        <script src="vkbeautify.0.99.00.beta.js"></script>
+        <script src="avatar.js"></script>
+        <script src="FileSaver.min.js"></script>
+        <script src="jszip.js"></script>
+        <link rel="stylesheet" href="./avatar.css"/>
     </head>
     <body>
         <svg id="main-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
@@ -19,12 +22,12 @@
 
                 <circle id="event-horizon-back" cx="0" cy="0" r="30" fill="#000"/>
 
-                <ellipse id="accretion-disk" cx="0" cy="0" rx="90" ry="20" fill="#FFF"/>
+                <ellipse id="accretion-disk" cx="0" cy="0" rx="90" ry="20" fill="#FFF" data-animate-wipe-duration="5" data-animate-wipe-phase="-90"/>
 
                 <circle id="event-horizon-front" cx="0" cy="0" r="30" fill="#000" clip-path="url(#event-horizon-front-mask)"/>
             </g>
 
-            <g id="orbits" transform="rotate(-45)">
+            <g id="orbits" transform="rotate(-45) scale(1 0.22222222)">
                 <script>
 createOrbitingBody(1, 150, 6, -3/16, 0)
 document.currentScript.parentNode.removeChild(document.currentScript)
@@ -38,19 +41,38 @@ createOrbitingBody(3, 525, 8, 11/16, 0)
 document.currentScript.parentNode.removeChild(document.currentScript)
                 </script>
             </g>
+            <g transform="rotate(-45)">
+                <circle cx="0" cy="0" r="30" fill="#000" clip-path="url(#event-horizon-front-mask)"/>
+            </g>
 
             <g id="guides">
-                <circle id="round-bounds" cx="0" cy="0" r="100" stroke="#00F" stroke-width="1" fill="none"/>
-                <rect id="square-bounds" x="-80" y="-80" width="160" height="160" stroke="#00F" stroke-width="1" fill="none"/>
-                <rect id="twitter-banner-bounds" x="-450" y="-150" width="900" height="300" stroke="#00F" stroke-width="1" fill="none"/>
+                <circle id="round-bounds" cx="0" cy="0" r="100" stroke="#F00" stroke-width="1" fill="none"/>
+                <rect id="square-bounds" x="-80" y="-80" width="160" height="160" stroke="#F00" stroke-width="1" fill="none"/>
+                <rect id="twitter-banner-bounds" x="-450" y="-150" width="900" height="300" stroke="#F00" stroke-width="1" fill="none"/>
             </g>
         </svg>
         <hr/>
 
         <div id="export-container">
+            <template id="export-template">
+                <div class="export">
+                    <h3 class="export-name"></h3>
+                    <div class="export-svg-link-row">
+                        <a class="export-svg-link-static" href="">SVG</a>
+                        <a class="export-svg-link-animated" href="">Animated SVG</a>
+                    </div>
+                    <img class="export-image"/>
+                    <div class="export-svg-animation-preview"></div>
+                    <a class="export-generate-video" href="#">Generate Video</a>
+                    <video class="export-video" hidden=""></video>
+                </div>
+            </template>
         </div>
 
-        <pre id="svg-text"></pre>
+        Static:
+        <pre id="svg-full"></pre>
+        Animated:
+        <pre id="svg-animated"></pre>
 
     </body>
 </html>
