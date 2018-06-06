@@ -206,7 +206,9 @@ window.onload = function() {
     stripAnimations(document.getElementById('main-svg'))
 
     document.getElementById('svg-full').textContent = vkbeautify.xml(stripAnimations(guideless.cloneNode(true)).outerHTML, 4)
+    document.getElementById('svg-full-link').href = "data:text/plain," + encodeURIComponent(vkbeautify.xml(stripAnimations(guideless.cloneNode(true)).outerHTML, 4))
     document.getElementById('svg-animated').textContent = vkbeautify.xml(generateAnimations(guideless.cloneNode(true)).outerHTML, 4)
+    document.getElementById('svg-animated-link').href = "data:text/plain," + encodeURIComponent(vkbeautify.xml(generateAnimations(guideless.cloneNode(true)).outerHTML, 4))
 
     container.appendChild(exportImage('Full', guideless, {
         x: -500, y: -500,
