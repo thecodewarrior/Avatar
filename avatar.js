@@ -5,20 +5,38 @@ function createElement(html) {
     return el.content.childNodes[0];
 }
 
-function createOrbitingBody(index, distance, size, angle, skew) {
-    var orbitDegreeLength = (Math.PI * 2 * distance) / 360;
+function resonance(targetRadius, resonance) {
+    return 
+}
+
+function createOrbitingBody(args) {
+    var index = args['index'] || 0
+    var radius = args['radius'] || 100
+    var period = args['period'] || 1
+    var size = args['size'] || 5
+    var angle = args['angle'] || 0
+
+    if(radius['resonanceWith']) {
+        var otherRadius = radius['resonanceWith']['radius']
+        var otherPeriod = radius['resonanceWith']['period']
+        var factor = radius['factor']
+        radius = otherRadius * Math.pow(factor, 2.0/3)
+        period = otherPeriod * factor
+    }
+
+    var orbitDegreeLength = (Math.PI * 2 * radius) / 360;
     var tag = 
-        '<g id="orbit' + index + '">\n' + 
-        '    <circle id="orbit' + index + '-circle" cx="0" cy="0" r="' + distance + '" fill="none"\n' +
+        '<g id="orbit-' + index + '">\n' + 
+        '    <circle id="orbit-' + index + '-circle" cx="0" cy="0" r="' + radius + '" fill="none"\n' +
         '        stroke-dasharray="' + (orbitDegreeLength*2) + '" stroke-dashoffset="' + orbitDegreeLength + '" stroke="#FFF" stroke-width="2"/>\n' +
 
 
         '    <g transform="rotate(' + (angle*360) + ')">\n' +
-        '        <animateTransform attributeName="transform" type="rotate" from="' + (angle*360) + '" to="' + (angle*360 + 360) + '" dur="5s" repeatCount="indefinite"/>\n' +
-        '        <g transform="translate(' + distance + ' 0)">\n' +
+        '        <animateTransform attributeName="transform" type="rotate" from="' + (angle*360) + '" to="' + (angle*360 + 360) + '" dur="' + period + 's" repeatCount="indefinite"/>\n' +
+        '        <g transform="translate(' + radius + ' 0)">\n' +
         '            <g transform="rotate(' + -(angle*360) + ')">\n' +
-        '                <animateTransform attributeName="transform" type="rotate" from="' + -(angle*360) + '" to="' + -(angle*360 + 360) + '" dur="5s" repeatCount="indefinite"/>\n' +
-        '                <circle id="orbit' + index + '-body" cx="0" cy="0" r="' + size + '" fill="#FFF" transform="scale(1 4.5)">\n' +
+        '                <animateTransform attributeName="transform" type="rotate" from="' + -(angle*360) + '" to="' + -(angle*360 + 360) + '" dur="' + period + 's" repeatCount="indefinite"/>\n' +
+        '                <circle id="orbit-' + index + '-body" cx="0" cy="0" r="' + size + '" fill="#FFF" transform="scale(1 4.5)">\n' +
         '            </g>\n' +
         '        </g>\n' +
         '    </g>\n' +
@@ -187,13 +205,11 @@ function generateWipe(element) {
     var yScale = ry/maxRadius;
 
     var randomId = 'a' + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15) + 'a'; 
-    var randomId2 = 'a' + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15) + 'a'; 
 
     var tag =
         '<circle id="' + element.id + '" cx="' + element.getAttribute('cx') + '" cy="' + element.getAttribute('cy') + '" r="' + (maxRadius/2) + '" fill="none" ' +
         '    transform="scale(' + xScale + ' ' + yScale + ') rotate(' + phase + ')" stroke="' + element.getAttribute('fill') + '" stroke-width="' + maxRadius + '" stroke-dasharray="' + circumference + '">' +
-        '    <animate id="' + randomId + '" begin="0000ms;' + randomId2 + '.end" attributeName="stroke-dashoffset" from="' + circumference + '" to="0" dur="' + duration + 's"/>' +
-        '    <set id="' + randomId2 + '" begin="' + randomId + '.end" attributeName="stroke-dashoffset" to="0" dur="' + duration + 's"/>' +
+        '    <animate id="' + randomId + '" begin="0000ms;' + randomId + '.end" attributeName="stroke-dashoffset" from="0" to="' + (-199*circumference) + '" dur="' + (100*duration) + 's"/>' +
         '</circle>';
 
     element.outerHTML = tag;
@@ -204,6 +220,7 @@ window.onload = function() {
     var guideless = document.getElementById('main-svg').cloneNode(true)
     guideless.getElementById('guides').outerHTML = ""
     stripAnimations(document.getElementById('main-svg'))
+    document.getElementById('main-svg').parentElement.appendChild(generateAnimations(guideless.cloneNode(true)))
 
     document.getElementById('svg-full').textContent = vkbeautify.xml(stripAnimations(guideless.cloneNode(true)).outerHTML, 4)
     document.getElementById('svg-full-link').href = "data:text/plain," + encodeURIComponent(vkbeautify.xml(stripAnimations(guideless.cloneNode(true)).outerHTML, 4))
@@ -216,7 +233,7 @@ window.onload = function() {
         imageWidth: 1000,
         imageHeight: 1000,
         framerate: 30,
-        duration: 10
+        duration: 12
     }))
     container.appendChild(exportImage('Twitter Banner', guideless, {
         x: -450, y: -150,
@@ -224,7 +241,7 @@ window.onload = function() {
         imageWidth: 1500,
         imageHeight: 500,
         framerate: 30,
-        duration: 10
+        duration: 12
     }))
 
     var orbitless = guideless.cloneNode(true)
@@ -236,7 +253,7 @@ window.onload = function() {
         imageWidth: 500,
         imageHeight: 500,
         framerate: 30,
-        duration: 5
+        duration: 4
     }))
     container.appendChild(exportImage('Square Avatar', orbitless, {
         x: -80, y: -80,
@@ -244,7 +261,7 @@ window.onload = function() {
         imageWidth: 500,
         imageHeight: 500,
         framerate: 30,
-        duration: 5
+        duration: 4
     }))
 }
 

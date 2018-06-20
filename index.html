@@ -8,49 +8,71 @@
         <link rel="stylesheet" href="./avatar.css"/>
     </head>
     <body>
-        <svg id="main-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-                           x="0px" y="0px" width="1000px" height="1000px" viewBox="-500 -500 1000 1000" xml:space="preserve">
-            <rect id="background" x="-10000" y="-10000" width="20000" height="20000" fill="#000000"/>
+        <div>
+            <svg id="main-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                                             x="0px" y="0px" width="1000px" height="1000px" viewBox="-500 -500 1000 1000" xml:space="preserve">
+                <rect id="background" x="-10000" y="-10000" width="20000" height="20000" fill="#000000"/>
 
-            <clipPath id="event-horizon-front-mask">
+                <clipPath id="event-horizon-front-mask">
                 <rect x="-100" y="-100" width="200" height="100" fill="#F00"/>
                 <ellipse cx="0" cy="0" rx="30" ry="6.66666666666" fill="#F00"/>
-            </clipPath>
+                </clipPath>
 
-            <g id="main-avatar" transform="rotate(-45)">
+                <g id="main-avatar" transform="rotate(-45)">
                 <circle id="halo" cx="0" cy="0" r="40" fill="#FFF"/>
 
                 <circle id="event-horizon-back" cx="0" cy="0" r="30" fill="#000"/>
 
-                <ellipse id="accretion-disk" cx="0" cy="0" rx="90" ry="20" fill="#FFF" data-animate-wipe-duration="5" data-animate-wipe-phase="-90"/>
+                <ellipse id="accretion-disk" cx="0" cy="0" rx="90" ry="20" fill="#FFF" data-animate-wipe-duration="4" data-animate-wipe-phase="-90"/>
 
                 <circle id="event-horizon-front" cx="0" cy="0" r="30" fill="#000" clip-path="url(#event-horizon-front-mask)"/>
-            </g>
+                </g>
 
-            <g id="orbits" transform="rotate(-45) scale(1 0.22222222)">
+                <g id="orbits" transform="rotate(-45) scale(1 0.22222222)">
                 <script>
-createOrbitingBody(1, 150, 6, -3/16, 0)
+                    createOrbitingBody({
+                        index: 1,
+                        radius: 250,
+                        period: 3,
+                        size: 6,
+                        angle: -3/16
+                    })
 document.currentScript.parentNode.removeChild(document.currentScript)
                 </script>
                 <script>
-createOrbitingBody(2, 250, 10, 5/32, 0)
+                    createOrbitingBody({
+                        index: 2,
+                        radius: {
+                            resonanceWith: { radius: 250, period: 3 },
+                            factor: 2
+                        },
+                        size: 6,
+                        angle: 5/32
+                    })
 document.currentScript.parentNode.removeChild(document.currentScript)
                 </script>
                 <script>
-createOrbitingBody(3, 525, 8, 11/16, 0)
+                    createOrbitingBody({
+                        index: 3,
+                        radius: {
+                            resonanceWith: { radius: 250, period: 3 },
+                            factor: 4
+                        },
+                        size: 8,
+                        angle: 11/16
+                    })
 document.currentScript.parentNode.removeChild(document.currentScript)
                 </script>
-            </g>
-            <g transform="rotate(-45)">
-                <circle cx="0" cy="0" r="30" fill="#000" clip-path="url(#event-horizon-front-mask)"/>
-            </g>
+                </g>
 
-            <g id="guides">
+                <g id="guides">
                 <circle id="round-bounds" cx="0" cy="0" r="100" stroke="#F00" stroke-width="1" fill="none"/>
                 <rect id="square-bounds" x="-80" y="-80" width="160" height="160" stroke="#F00" stroke-width="1" fill="none"/>
                 <rect id="twitter-banner-bounds" x="-450" y="-150" width="900" height="300" stroke="#F00" stroke-width="1" fill="none"/>
-            </g>
-        </svg>
+                </g>
+            </svg>
+            <hr/>
+        </div>
         <hr/>
 
         <div id="export-container">
