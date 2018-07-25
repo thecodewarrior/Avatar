@@ -1,0 +1,12 @@
+<svg id="main-svg" version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="500px" height="500px" viewBox="-80 -80 160 160" xml:space="preserve">
+    <g id="main-avatar" transform="rotate(-45)">
+        <circle id="halo" cx="0" cy="0" r="40" fill="#FFF"></circle>
+        <circle id="event-horizon-back" cx="0" cy="0" r="30" fill="#000"></circle>
+        <circle id="accretion-disk" cx="0" cy="0" r="45" fill="none" transform="scale(1 0.2222222222222222) rotate(-90)" stroke="#FFF" stroke-width="90" stroke-dasharray="282.7433388230814"></circle>
+        <g id="event-horizon-front"></g>
+        <path d="M-30,0 a1,1 0 0,1 60,0" fill="#000"></path>
+        <ellipse cx="0" cy="0" rx="30" ry="6.66666666666" fill="#000"></ellipse>
+    </g>
+</svg>

@@ -44,3 +44,9 @@
     }
 }
 
+#export .input-labels {
+    display: inline-block;
+    width: 200px;
+    text-align: right;
+    margin-right: 5px;
+}

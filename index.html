@@ -1,104 +1,127 @@
 <html>
-    <head>
-        <meta charset="utf-8"/>
-        <script src="vkbeautify.0.99.00.beta.js"></script>
-        <script src="avatar.js"></script>
-        <script src="FileSaver.min.js"></script>
-        <script src="jszip.js"></script>
-        <link rel="stylesheet" href="./avatar.css"/>
-    </head>
-    <body>
-        <div>
-            <svg id="main-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+<head>
+    <meta charset="utf-8"/>
+    <script src="vkbeautify.0.99.00.beta.js"></script>
+    <script src="avatar.js"></script>
+    <script src="FileSaver.min.js"></script>
+    <script src="jszip.js"></script>
+    <link rel="stylesheet" href="./avatar.css"/>
+</head>
+<body>
+<div>
+    <svg id="main-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                              x="0px" y="0px" width="1000px" height="1000px" viewBox="-500 -500 1000 1000" xml:space="preserve">
-                <rect id="background" x="-10000" y="-10000" width="20000" height="20000" fill="#000000"/>
+        <rect id="background" x="-10000" y="-10000" width="20000" height="20000" fill="#000000"/>
 
-                <clipPath id="event-horizon-front-mask">
-                <rect x="-100" y="-100" width="200" height="100" fill="#F00"/>
-                <ellipse cx="0" cy="0" rx="30" ry="6.66666666666" fill="#F00"/>
-                </clipPath>
+        <g id="main-avatar" transform="rotate(-45)">
+            <circle id="halo" cx="0" cy="0" r="40" fill="#FFF"/>
 
-                <g id="main-avatar" transform="rotate(-45)">
-                <circle id="halo" cx="0" cy="0" r="40" fill="#FFF"/>
+            <circle id="event-horizon-back" cx="0" cy="0" r="30" fill="#000"/>
 
-                <circle id="event-horizon-back" cx="0" cy="0" r="30" fill="#000"/>
+            <ellipse id="accretion-disk" cx="0" cy="0" rx="90" ry="20" fill="#FFF" data-animate-wipe-duration="4" data-animate-wipe-phase="-90"/>
 
-                <ellipse id="accretion-disk" cx="0" cy="0" rx="90" ry="20" fill="#FFF" data-animate-wipe-duration="4" data-animate-wipe-phase="-90"/>
+            <g id="event-horizon-front"/>
+                <path d="M-30,0 a1,1 0 0,1 60,0" fill="#000"></path>
+                <ellipse cx="0" cy="0" rx="30" ry="6.66666666666" fill="#000"></ellipse>
+            </g>
+        </g>
 
-                <circle id="event-horizon-front" cx="0" cy="0" r="30" fill="#000" clip-path="url(#event-horizon-front-mask)"/>
-                </g>
+        <g id="orbits" transform="rotate(-45) scale(1 0.22222222)">
+            <script>
+                createOrbitingBody({
+                    index: 1,
+                    radius: 250,
+                    period: 3,
+                    size: 6,
+                    angle: -3/16
+                });
+                document.currentScript.parentNode.removeChild(document.currentScript);
+            </script>
+            <script>
+                createOrbitingBody({
+                    index: 2,
+                    radius: {
+                        resonanceWith: { radius: 250, period: 3 },
+                        factor: 2
+                    },
+                    size: 6,
+                    angle: 5/32
+                });
+                document.currentScript.parentNode.removeChild(document.currentScript);
+            </script>
+            <script>
+                createOrbitingBody({
+                    index: 3,
+                    radius: {
+                        resonanceWith: { radius: 250, period: 3 },
+                        factor: 4
+                    },
+                    size: 8,
+                    angle: 11/16
+                });
+                document.currentScript.parentNode.removeChild(document.currentScript);
+            </script>
+        </g>
 
-                <g id="orbits" transform="rotate(-45) scale(1 0.22222222)">
-                <script>
-                    createOrbitingBody({
-                        index: 1,
-                        radius: 250,
-                        period: 3,
-                        size: 6,
-                        angle: -3/16
-                    })
-                document.currentScript.parentNode.removeChild(document.currentScript)
-                </script>
-                <script>
-                    createOrbitingBody({
-                        index: 2,
-                        radius: {
-                            resonanceWith: { radius: 250, period: 3 },
-                            factor: 2
-                        },
-                        size: 6,
-                        angle: 5/32
-                    })
-                document.currentScript.parentNode.removeChild(document.currentScript)
-                </script>
-                <script>
-                    createOrbitingBody({
-                        index: 3,
-                        radius: {
-                            resonanceWith: { radius: 250, period: 3 },
-                            factor: 4
-                        },
-                        size: 8,
-                        angle: 11/16
-                    })
-                document.currentScript.parentNode.removeChild(document.currentScript)
-                </script>
-                </g>
+        <g id="guides">
+            <circle id="round-bounds" cx="0" cy="0" r="100" stroke="#F00" stroke-width="1" fill="none"/>
+            <rect id="square-bounds" x="-80" y="-80" width="160" height="160" stroke="#F00" stroke-width="1" fill="none"/>
+            <rect id="twitter-banner-bounds" x="-450" y="-150" width="900" height="300" stroke="#F00" stroke-width="1" fill="none"/>
+        </g>
+    </svg>
+    <hr/>
+</div>
+<hr/>
 
-                <g id="guides">
-                <circle id="round-bounds" cx="0" cy="0" r="100" stroke="#F00" stroke-width="1" fill="none"/>
-                <rect id="square-bounds" x="-80" y="-80" width="160" height="160" stroke="#F00" stroke-width="1" fill="none"/>
-                <rect id="twitter-banner-bounds" x="-450" y="-150" width="900" height="300" stroke="#F00" stroke-width="1" fill="none"/>
-                </g>
-            </svg>
-            <hr/>
+<div id="export-container">
+    <template id="export-template">
+        <div class="export">
+            <h3 class="export-name"></h3>
+            <div class="export-svg-link-row">
+                <a class="export-svg-link-static" href="">SVG</a>
+                <a class="export-svg-link-animated" href="">Animated SVG</a>
+            </div>
+            <img class="export-image"/>
+            <div class="export-svg-animation-preview"></div>
+            <a class="export-generate-video" href="#">Generate Video</a>
+            <video class="export-video" hidden=""></video>
         </div>
-        <hr/>
+    </template>
+</div>
 
-        <div id="export-container">
-            <template id="export-template">
-                <div class="export">
-                    <h3 class="export-name"></h3>
-                    <div class="export-svg-link-row">
-                        <a class="export-svg-link-static" href="">SVG</a>
-                        <a class="export-svg-link-animated" href="">Animated SVG</a>
-                    </div>
-                    <img class="export-image"/>
-                    <div class="export-svg-animation-preview"></div>
-                    <a class="export-generate-video" href="#">Generate Video</a>
-                    <video class="export-video" hidden=""></video>
-                </div>
-            </template>
-        </div>
+<div id="export">
+    <div><span class="input-labels">Planets:</span><input type="checkbox" id="planets-enabled"/></div>
+    <div><span class="input-labels">Width:</span><input class="export-svg-width" type="number" min="0"/></div>
+    <div><span class="input-labels">Height:</span><input class="export-svg-height" type="number" min="0"/></div>
+    <div><span class="input-labels">Bounds width:</span><input class="export-svg-width" type="number" value="500" min="0" max="1000"/></div>
+    <div><span class="input-labels">Bounds height:</span><input class="export-svg-height" type="number" value="500" min="0" max="1000"/></div>
+    <div>
+        <span class="input-labels">Default bounds:</span>
+        <select>
+            <option value="200,200">Round Avatar</option>
+            <option value="160,160">Square Avatar</option>
+            <option value="900,300">Banner</option>
+            <option value="1000,1000">Full</option>
+        </select>
+    </div>
+    <div class="export-svg-link-row">
+        <a class="export-svg-link-static" href="">SVG</a>
+        <a class="export-svg-link-animated" href="">Animated SVG</a>
+    </div>
+    <img class="export-image"/>
+    <div class="export-svg-animation-preview"></div>
+    <a class="export-generate-video" href="#">Generate Video</a>
+    <video class="export-video" hidden=""></video>
+</div>
 
-        <hr/>
-        <h2>Static:</h2>
-        <pre id="svg-full"></pre>
-        <a id="svg-full-link" href="">Link</a>
-        <hr/>
-        <h2>Animated:</h2>
-        <pre id="svg-animated"></pre>
-        <a id="svg-animated-link" href="">Link</a>
+<hr/>
+<h2>Static:</h2>
+<pre id="svg-full"></pre>
+<a id="svg-full-link" href="">Link</a>
+<hr/>
+<h2>Animated:</h2>
+<pre id="svg-animated"></pre>
+<a id="svg-animated-link" href="">Link</a>
 
-    </body>
+</body>
 </html>
