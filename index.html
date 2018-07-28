@@ -14,15 +14,22 @@
         <rect id="background" x="-10000" y="-10000" width="20000" height="20000" fill="#000000"/>
 
         <g id="main-avatar" transform="rotate(-45)">
-            <circle id="halo" cx="0" cy="0" r="40" fill="#FFF"/>
+        <!--<circle id="halo" cx="0" cy="0" r="40" fill="#FFF"/>-->
 
             <circle id="event-horizon-back" cx="0" cy="0" r="30" fill="#000"/>
 
             <ellipse id="accretion-disk" cx="0" cy="0" rx="90" ry="20" fill="#FFF" data-animate-wipe-duration="4" data-animate-wipe-phase="-90"/>
 
-            <g id="event-horizon-front"/>
-                <path d="M-30,0 a1,1 0 0,1 60,0" fill="#000"></path>
-                <ellipse cx="0" cy="0" rx="30" ry="6.66666666666" fill="#000"></ellipse>
+            <g id="event-horizon-front">
+                <path d="
+				M -30,0 
+				A 1,1 0 0,1 30,0 
+				A 9,2 0 0,1 -30,0
+				" fill="#000"></path>
+            </g>
+
+            <g id="astrophysical-jets">
+            <script> createBeams(); document.currentScript.parentNode.removeChild(document.currentScript); </script>
             </g>
         </g>
 
