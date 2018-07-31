@@ -1,0 +1,28 @@
+svg#main {
+    background-color: #000;
+}
+
+#settings {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+fieldset {
+    display: inline-block;
+}
+
+fieldset .left-label {
+    width: 3em;
+    display: inline-block;
+    text-align: right;
+    margin-right: 0.1em;
+}
+
+.input-vec2d input {
+    width: 6em;
+    display: inline-block;
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+}

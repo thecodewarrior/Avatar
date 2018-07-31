@@ -10,5 +10,6 @@ data class AvatarSettings(
 )
 
 class AvatarSettingsManager {
+init {}
 
 }

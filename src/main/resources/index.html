@@ -1,0 +1,69 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <script type="text/javascript" src="kotlin.js"></script>
+    <script type="text/javascript" src="Avatar.js"></script>
+    <link rel="stylesheet" type="text/css" href="index.css"/>
+</head>
+<body>
+<!--<div id="settings">-->
+    <!--<div class="column">-->
+        <!--Bounds:-->
+        <!--<select id="bounds-preset">-->
+            <!--<option value="">Custom</option>-->
+            <!--<optgroup label="Avatar">-->
+                <!--<option value="-110 -110 110 110">Circle</option>-->
+                <!--<option value="-80 -80 80 80">Square</option>-->
+            <!--</optgroup>-->
+        <!--</select><br/>-->
+
+        <!--<span id="bounds-preset-min" class="input-vec2d">-->
+            <!--<span>Min:</span><input type="number" class="vec2d-x"/><input type="number" class="vec2d-y"/>-->
+        <!--</span><br/>-->
+        <!--<span id="bounds-preset-max" class="input-vec2d">-->
+            <!--<span>Max:</span><input type="number" class="vec2d-x"/><input type="number" class="vec2d-y"/>-->
+        <!--</span><br/>-->
+    <!--</div>-->
+    <!--<div class="column">-->
+    <!--</div>-->
+<!--</div><br/>-->
+
+<div id="settings">
+    <fieldset>
+        <legend>View Bounds</legend>
+        <div>
+            <span class="left-label">Preset: </span>
+            <select id="bounds-preset">
+                <option value="">Custom</option>
+                <optgroup label="Avatar">
+                    <option value="-110 -110 110 110">Circle</option>
+                    <option value="-80 -80 80 80">Square</option>
+                </optgroup>
+            </select>
+        </div>
+        <div id="bounds-preset-min" class="input-vec2d">
+            <span class="left-label">Min:</span><input type="number" class="vec2d-x"/><input type="number" class="vec2d-y"/>
+        </div>
+        <div id="bounds-preset-max" class="input-vec2d">
+            <span class="left-label">Max:</span><input type="number" class="vec2d-x"/><input type="number" class="vec2d-y"/>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Features</legend>
+        <div>
+            <input type="radio" id="jets" name="feature" checked />
+            <label for="jets">Relativistic Jets</label>
+        </div>
+        <div>
+            <input type="radio" id="distorted-disk" name="feature" />
+            <label for="distorted-disk">Distorted Accretion Disk</label>
+        </div>
+    </fieldset>
+</div>
+
+<div id="preview">
+
+</div>
+</body>
+</html>
