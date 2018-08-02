@@ -1,4 +1,4 @@
-package co.thecodewarrior.avatar
+package co.thecodewarrior.avatar.util
 
 import kotlin.math.*
 

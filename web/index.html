@@ -1,8 +1,10 @@
 <html>
 <head>
     <meta charset="utf-8"/>
-    <script type="text/javascript" src="kotlin.js"></script>
-    <script type="text/javascript" src="Avatar.js"></script>
+    <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/core.js"></script>-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script type="text/javascript" src="js/kotlin.js"></script>
+    <script type="text/javascript" src="js/Avatar.js"></script>
     <link rel="stylesheet" type="text/css" href="index.css"/>
 </head>
 <body>
@@ -34,34 +36,26 @@
         <div>
             <span class="left-label">Preset: </span>
             <select id="bounds-preset">
-                <option value="">Custom</option>
+                <option selected value="">Custom</option>
                 <optgroup label="Avatar">
-                    <option value="-110 -110 110 110">Circle</option>
-                    <option value="-80 -80 80 80">Square</option>
+                    <option value="110 110 500">Circle</option>
+                    <option value="80 80 500">Square</option>
                 </optgroup>
             </select>
         </div>
-        <div id="bounds-preset-min" class="input-vec2d">
-            <span class="left-label">Min:</span><input type="number" class="vec2d-x"/><input type="number" class="vec2d-y"/>
-        </div>
         <div id="bounds-preset-max" class="input-vec2d">
-            <span class="left-label">Max:</span><input type="number" class="vec2d-x"/><input type="number" class="vec2d-y"/>
+            x: ±<input type="number" id="bounds-x" class="int" value="100"/>
+            y: ±<input type="number" id="bounds-y" class="int" value="100"/>
         </div>
+        Resolution (along longest axis): <input type="number" id="resolution" class="int" value="500"/>
     </fieldset>
 
-    <fieldset>
+    <fieldset id="features-set">
         <legend>Features</legend>
-        <div>
-            <input type="radio" id="jets" name="feature" checked />
-            <label for="jets">Relativistic Jets</label>
-        </div>
-        <div>
-            <input type="radio" id="distorted-disk" name="feature" />
-            <label for="distorted-disk">Distorted Accretion Disk</label>
-        </div>
     </fieldset>
 </div>
 
+<button id="load-preview">Load Preview</button>
 <div id="preview">
 
 </div>

@@ -1,5 +1,11 @@
 svg#main {
     background-color: #000;
+    transition: background-color 0.2s;
+}
+
+svg#main:hover {
+    background-color: #444;
+    transition: background-color 0.2s;
 }
 
 #settings {
@@ -20,7 +26,7 @@ fieldset .left-label {
     margin-right: 0.1em;
 }
 
-.input-vec2d input {
+input.int {
     width: 6em;
     display: inline-block;
     margin-right: 0.5em;

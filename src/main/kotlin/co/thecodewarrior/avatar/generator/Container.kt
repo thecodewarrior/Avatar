@@ -1,4 +1,4 @@
-package co.thecodewarrior.avatar
+package co.thecodewarrior.avatar.generator
 
 class Container(settings: AvatarSettings): AvatarXML(settings) {
     val avatar = Avatar(settings)

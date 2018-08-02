@@ -1,4 +1,4 @@
-package co.thecodewarrior.avatar
+package co.thecodewarrior.avatar.generator
 
 abstract class AvatarXML(val settings: AvatarSettings) {
     private val lines: MutableList<String> = ArrayList()

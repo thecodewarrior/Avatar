@@ -9,15 +9,24 @@ version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
+        maven("https://kotlin.bintray.com/js-externals")
 }
 
 dependencies {
     compile(kotlin("stdlib-js"))
 }
 
+java.sourceSets {
+    getByName("main").java.srcDirs("src/main/definitions/kotlin")
+}
+
 val mainSourceSet = the<JavaPluginConvention>().sourceSets["main"]!!
 
 tasks {
+    "compileKotlin2Js"(Kotlin2JsCompile::class) {
+        kotlinOptions.sourceMap = true
+        kotlinOptions.sourceMapEmbedSources = "always"
+    }
     val unpackKotlinJsStdlib by creating {
         group = "build"
         description = "Unpack the Kotlin JavaScript standard library"
@@ -46,7 +55,7 @@ tasks {
         from(mainSourceSet.output) {
             exclude("**/*.kjsm")
         }
-        into("$buildDir/web")
+        into("$projectDir/web/js")
     }
     "assemble" {
         dependsOn(assembleWeb)
