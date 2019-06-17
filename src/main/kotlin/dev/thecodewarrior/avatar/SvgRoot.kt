@@ -13,9 +13,6 @@ class SvgRoot: SvgGenerator {
 
     val avatar = AvatarGenerator(this)
 
-    override val pixelsPerPoint: Int
-        get() = imageWidth/viewBox.width
-
     override fun generate(): Node = xml("svg") {
         xmlns = "http://www.w3.org/2000/svg"
 
@@ -26,17 +23,17 @@ class SvgRoot: SvgGenerator {
             "y" to "0px",
             "width" to "${imageWidth}px",
             "height" to "${(aspectRatio * imageWidth).roundToInt()}px",
-            "viewBox" to "${viewBox.minX.p} ${viewBox.minY.p} ${viewBox.width.p} ${viewBox.height.p}",
+            "viewBox" to "${viewBox.minX} ${viewBox.minY} ${viewBox.width} ${viewBox.height}",
             "xml:space" to "preserve"
         )
 
         "rect" {
             attributes(
                 "id" to "background",
-                "x" to viewBox.minX.p,
-                "y" to viewBox.minY.p,
-                "width" to viewBox.width.p,
-                "height" to viewBox.height.p,
+                "x" to viewBox.minX,
+                "y" to viewBox.minY,
+                "width" to viewBox.width,
+                "height" to viewBox.height,
                 "fill" to "#000"
             )
         }
@@ -49,5 +46,4 @@ class SvgRoot: SvgGenerator {
 //            }
         }
     }
-
 }

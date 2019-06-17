@@ -15,7 +15,7 @@ import kotlin.math.pow
 import kotlin.math.sin
 import kotlin.math.sqrt
 
-class AvatarGenerator(override val root: SvgRoot): SvgGeneratorBase {
+class AvatarGenerator(val root: SvgRoot): SvgGenerator {
     var halo = true
     var accretionDisk = true
     var jets = false
@@ -37,7 +37,7 @@ class AvatarGenerator(override val root: SvgRoot): SvgGeneratorBase {
                     "id" to "halo",
                     "cx" to 0,
                     "cy" to 0,
-                    "r" to haloRadius.p,
+                    "r" to haloRadius,
                     "fill" to "#f00"
                 )
             }
@@ -48,7 +48,7 @@ class AvatarGenerator(override val root: SvgRoot): SvgGeneratorBase {
                 "id" to "event-horizon-back",
                 "cx" to 0,
                 "cy" to 0,
-                "r" to eventHorizonRadius.p,
+                "r" to eventHorizonRadius,
                 "fill" to "#000"
             )
         }
@@ -59,8 +59,8 @@ class AvatarGenerator(override val root: SvgRoot): SvgGeneratorBase {
                     "id" to "accretion-disk",
                     "cx" to 0,
                     "cy" to 0,
-                    "rx" to accretionDiskRadius.p,
-                    "ry" to (accretionDiskRadius * root.tiltRatio).p,
+                    "rx" to accretionDiskRadius,
+                    "ry" to accretionDiskRadius * root.tiltRatio,
                     "fill" to "#fff"
                 )
             }
@@ -69,9 +69,9 @@ class AvatarGenerator(override val root: SvgRoot): SvgGeneratorBase {
                     "id" to "event-horizon-front",
                     "fill" to "#000",
                     "d" to path {
-                        move(vec(-eventHorizonRadius, 0).p)
-                        arc(1, 1, 0, false, true, vec(eventHorizonRadius, 0).p)
-                        arc(1, root.tiltRatio, 0, false, true, vec(-eventHorizonRadius, 0).p)
+                        move(vec(-eventHorizonRadius, 0))
+                        arc(1, 1, 0, false, true, vec(eventHorizonRadius, 0))
+                        arc(1, root.tiltRatio, 0, false, true, vec(-eventHorizonRadius, 0))
                     }
                 )
             }
@@ -126,17 +126,17 @@ class AvatarGenerator(override val root: SvgRoot): SvgGeneratorBase {
         val controlPoint = intersectLines(tangentPoint, tangent, jetStart, jetTangent) ?: return@xml
 
         val topPath = path {
-//            move(jetEnd.p)
-//            line(jetStart.p)
-//            quad(controlPoint.p, tangentPoint.p)
-//            line(tangentPoint.flipX().p)
-            move(tangentPoint.p)
+//            move(jetEnd)
+//            line(jetStart)
+//            quad(controlPoint, tangentPoint)
+//            line(tangentPoint * vec(-1, 1))
+            move(tangentPoint)
             val rx = eventHorizonRadius * jetBaseSize
             val ry = rx * root.tiltRatio
-            arc(rx.p, ry.p, 0, true, true, tangentPoint.flipX().p)
+            arc(rx, ry, 0, true, true, tangentPoint.flipX())
             closePath()
-//            quad(controlPoint.flipX().p, jetStart.flipX().p)
-//            line(jetEnd.flipX().p)
+//            quad(controlPoint.flipX(), jetStart.flipX())
+//            line(jetEnd.flipX())
 //            closePath()
         }
 
@@ -147,6 +147,28 @@ class AvatarGenerator(override val root: SvgRoot): SvgGeneratorBase {
                 "fill" to "#fff"
 //                "stroke" to "#f00",
 //                "stroke-width" to 0.05
+            )
+        }
+    }
+
+    private fun generateTopJetBase(): Pair<Double, Node> {
+        val circleX = findContactX(jetBaseSize, root.tiltRatio)
+        val rx = eventHorizonRadius * jetBaseSize
+        val ry = rx * root.tiltRatio
+        val ellipseX = circleX / jetBaseSize
+        val circleY = sqrt(1 - circleX * circleX)
+        val ellipseY = sqrt(1 - ellipseX * ellipseX)
+
+        val circleContactY = circleY * eventHorizonRadius
+        val ellipseContactY = ellipseY * ry
+
+        return acos(circleX) to xml("ellipse"){
+            attributes(
+                "cx" to 0,
+                "cy" to ellipseContactY-circleContactY,
+                "rx" to rx,
+                "ry" to ry,
+                "fill" to "#fff"
             )
         }
     }
