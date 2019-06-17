@@ -16,12 +16,6 @@ repositories {
 dependencies {
     compile(kotlin("stdlib-jdk8"))
     compile("org.apache.xmlgraphics:batik-rasterizer:1.11")
-//    "compile"(kotlin("reflect", kotlin_version))
-//    "compile"("nl.komponents.kovenant", "kovenant", "3.3.0")
-//    "testCompile"("junit", "junit", "4.12")
-//    "testCompile"("com.nhaarman", "mockito-kotlin-kt1.1", "1.5.0")
-//    "testImplementation"("org.junit.jupiter", "junit-jupiter-api", "5.2.0-M1")
-//    "testRuntimeOnly"("org.junit.jupiter", "junit-jupiter-engine", "5.2.0-M1")
 }
 
 configure<JavaPluginConvention> {

@@ -7,7 +7,7 @@ class SvgGenerator {
 <svg id="main-svg" version="1.1"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1000px" height="1000px" viewBox="-500 -500 1000 1000" xml:space="preserve">
-    <rect id="background" x="-10000" y="-10000" width="20000" height="20000" fill="#000000"></rect>
+    <rect id="background" x="-10000" y="-10000" width="20000" height="20000" fill="#FF0000"></rect>
     <g id="main-avatar" transform="rotate(-45)">
         <circle id="event-horizon-back" cx="0" cy="0" r="30" fill="#000"></circle>
         <ellipse id="accretion-disk" cx="0" cy="0" rx="90" ry="20" fill="#FFF" data-animate-wipe-duration="4" data-animate-wipe-phase="-90"></ellipse>
