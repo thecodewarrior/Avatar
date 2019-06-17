@@ -23,7 +23,7 @@ class AvatarGenerator(val root: SvgRoot): SvgGenerator {
 
     var eventHorizonRadius = 30
     var haloRadius = 40
-    var accretionDiskRadius = 30
+    var accretionDiskRadius = 90
 
     override fun generate(): Node = xml("g") {
         attributes(
@@ -38,7 +38,7 @@ class AvatarGenerator(val root: SvgRoot): SvgGenerator {
                     "cx" to 0,
                     "cy" to 0,
                     "r" to haloRadius,
-                    "fill" to "#f00"
+                    "fill" to "#fff"
                 )
             }
         }
@@ -60,7 +60,7 @@ class AvatarGenerator(val root: SvgRoot): SvgGenerator {
                     "cx" to 0,
                     "cy" to 0,
                     "rx" to accretionDiskRadius,
-                    "ry" to accretionDiskRadius * root.tiltRatio,
+                    "ry" to accretionDiskRadius * abs(root.tiltRatio),
                     "fill" to "#fff"
                 )
             }
@@ -70,29 +70,11 @@ class AvatarGenerator(val root: SvgRoot): SvgGenerator {
                     "fill" to "#000",
                     "d" to path {
                         move(vec(-eventHorizonRadius, 0))
-                        arc(1, 1, 0, false, true, vec(eventHorizonRadius, 0))
-                        arc(1, root.tiltRatio, 0, false, true, vec(-eventHorizonRadius, 0))
+                        arc(1, 1, 0, false, root.tiltRatio > 0, vec(eventHorizonRadius, 0))
+                        arc(1, root.tiltRatio, 0, false, root.tiltRatio > 0, vec(-eventHorizonRadius, 0))
                     }
                 )
             }
-        }
-
-        run {
-
-//            "path" {
-//                attributes(
-//                    "fill" to "none",
-//                    "stroke" to "#fff",
-//                    "stroke-width" to 0.005,
-//                    "d" to path {
-//                        move(-vec(circleX, circleY) * eventHorizonRadius + vec(2, 0))
-//                        rel().line(vec(-2, 0))
-//                        abs().line(vec(-ellipseX*rx, ellipseContactY-circleContactY))
-//                        rel().line(vec(-2, 0))
-//                    }
-//                )
-//            }
-
         }
 
         if (jets) {
@@ -108,10 +90,7 @@ class AvatarGenerator(val root: SvgRoot): SvgGenerator {
     var jetExitAngle = 0.0
 
     private fun generateJets(): Node = xml("g") {
-
-//        val (jetTangentAngle, baseNode) = generateTopJetBase()
-        val jetTangentAngle = acos(findContactX(jetBaseSize, root.tiltRatio))
-//        addNode(baseNode)
+        val jetTangentAngle = acos(findContactX(jetBaseSize, abs(root.tiltRatio)))
 
         val jetStart = vec(jetWidth/2, jetStartDistance).flipY()
         val jetEnd = vec(jetWidth/2 + jetLength * jetSpread, eventHorizonRadius * jetLength).flipY()
@@ -126,18 +105,15 @@ class AvatarGenerator(val root: SvgRoot): SvgGenerator {
         val controlPoint = intersectLines(tangentPoint, tangent, jetStart, jetTangent) ?: return@xml
 
         val topPath = path {
-//            move(jetEnd)
-//            line(jetStart)
-//            quad(controlPoint, tangentPoint)
-//            line(tangentPoint * vec(-1, 1))
-            move(tangentPoint)
+            move(jetEnd)
+            line(jetStart)
+            quad(controlPoint, tangentPoint)
             val rx = eventHorizonRadius * jetBaseSize
             val ry = rx * root.tiltRatio
-            arc(rx, ry, 0, true, true, tangentPoint.flipX())
+            arc(rx, ry, 0, root.tiltRatio > 0, root.tiltRatio > 0, tangentPoint.flipX())
+            quad(controlPoint.flipX(), jetStart.flipX())
+            line(jetEnd.flipX())
             closePath()
-//            quad(controlPoint.flipX(), jetStart.flipX())
-//            line(jetEnd.flipX())
-//            closePath()
         }
 
         "path" {
@@ -145,29 +121,25 @@ class AvatarGenerator(val root: SvgRoot): SvgGenerator {
                 "id" to "jet-top",
                 "d" to topPath,
                 "fill" to "#fff"
-//                "stroke" to "#f00",
-//                "stroke-width" to 0.05
             )
         }
-    }
 
-    private fun generateTopJetBase(): Pair<Double, Node> {
-        val circleX = findContactX(jetBaseSize, root.tiltRatio)
-        val rx = eventHorizonRadius * jetBaseSize
-        val ry = rx * root.tiltRatio
-        val ellipseX = circleX / jetBaseSize
-        val circleY = sqrt(1 - circleX * circleX)
-        val ellipseY = sqrt(1 - ellipseX * ellipseX)
+        val bottomPath = path {
+            move(jetEnd.flipY())
+            line(jetStart.flipY())
+            quad(controlPoint.flipY(), tangentPoint.flipY())
+            val rx = eventHorizonRadius * jetBaseSize
+            val ry = rx * root.tiltRatio
+            arc(rx, ry, 0, root.tiltRatio < 0, root.tiltRatio > 0, tangentPoint.flipXY())
+            quad(controlPoint.flipXY(), jetStart.flipXY())
+            line(jetEnd.flipXY())
+            closePath()
+        }
 
-        val circleContactY = circleY * eventHorizonRadius
-        val ellipseContactY = ellipseY * ry
-
-        return acos(circleX) to xml("ellipse"){
+        "path" {
             attributes(
-                "cx" to 0,
-                "cy" to ellipseContactY-circleContactY,
-                "rx" to rx,
-                "ry" to ry,
+                "id" to "jet-bottom",
+                "d" to bottomPath,
                 "fill" to "#fff"
             )
         }
