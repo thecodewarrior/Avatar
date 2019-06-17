@@ -14,7 +14,7 @@ class Path {
     private var absolute = true
     private var startPos: Vec2d? = pos
 
-    private fun addCommand(name: Char, vararg parameters: Double) {
+    private fun addCommand(name: Char, vararg parameters: Number) {
         val command = if (absolute)
             name.toUpperCase()
         else
@@ -101,7 +101,7 @@ class Path {
      * Draw a line from the _current point_ to the _end point_, which is the _current point's_ shifted by the [x]
      * parameter and the _current point's_ y coordinate.
      */
-    fun horizontalLine(x: Double) = build {
+    fun horizontalLine(x: Number) = build {
         startCurve()
         addCommand('H', x)
         if(absolute)
@@ -124,7 +124,7 @@ class Path {
      * Draw a line from the _current point_ to the _end point_, which is the _current point's_ shifted by the [y]
      * parameter and the _current point's_ x coordinate.
      */
-    fun verticalLine(y: Double) = build {
+    fun verticalLine(y: Number) = build {
         startCurve()
         addCommand('V', y)
         if(absolute)
@@ -268,9 +268,9 @@ class Path {
      * The center of the ellipse used to draw the arc is determined automatically based on the other parameters of
      * the command.
      */
-    fun arc(radiusX: Double, radiusY: Double, angle: Double, largeArc: Boolean, clockwise: Boolean, end: Vec2d) = build {
+    fun arc(radiusX: Number, radiusY: Number, angle: Number, largeArc: Boolean, clockwise: Boolean, end: Vec2d) = build {
         startCurve()
-        addCommand('A', radiusX, radiusY, angle, if(largeArc) 1.0 else 0.0, if(clockwise) 1.0 else 0.0, end.x, end.y)
+        addCommand('A', radiusX, radiusY, angle, if(largeArc) 1 else 0, if(clockwise) 1 else 0, end.x, end.y)
         newPos(end)
     }
 
@@ -315,5 +315,3 @@ class Path {
         }
     }
 }
-
-inline fun path(callback: Path.() -> Unit): String = Path.build(callback)

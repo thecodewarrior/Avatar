@@ -89,6 +89,10 @@ class Vec2d(val x: Double, val y: Double) {
     @JvmSynthetic
     operator fun unaryMinus(): Vec2d = this * -1
 
+    fun flipX(): Vec2d = Vec2d(-x, y)
+    fun flipY(): Vec2d = Vec2d(x, -y)
+    fun flipXY(): Vec2d = Vec2d(-x, -y)
+
     @get:JvmName("lengthSquared")
     val lengthSquared: Double get() = x * x + y * y
 
@@ -97,7 +101,7 @@ class Vec2d(val x: Double, val y: Double) {
     }
 
     fun normalize(): Vec2d {
-        val norm = 1.0/length()
+        val norm = length()
         return Vec2d(x / norm, y / norm)
     }
 
