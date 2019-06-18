@@ -1,17 +1,15 @@
 package dev.thecodewarrior.avatar.generator
 
 import dev.thecodewarrior.avatar.SvgRoot
+import dev.thecodewarrior.avatar.dsl.Path
 import dev.thecodewarrior.avatar.util.intersectLines
 import dev.thecodewarrior.avatar.util.path
 import dev.thecodewarrior.avatar.util.vec
 import org.redundent.kotlin.xml.Node
 import org.redundent.kotlin.xml.xml
-import kotlin.math.PI
 import kotlin.math.abs
 import kotlin.math.acos
-import kotlin.math.asin
 import kotlin.math.cos
-import kotlin.math.pow
 import kotlin.math.sin
 import kotlin.math.sqrt
 
@@ -85,65 +83,117 @@ class AvatarGenerator(val root: SvgRoot): SvgGenerator {
     var jetBaseSize = 0.5
     var jetWidth = 10.0
     var jetLength = 1500.0
-    var jetSpread = 0.001
-    var jetStartDistance = 60.0
+    var jetSpread = 0.0
+    var jetStartDistance = 20.0
     var jetExitAngle = 0.0
 
     private fun generateJets(): Node = xml("g") {
-        val jetTangentAngle = acos(findContactX(jetBaseSize, abs(root.tiltRatio)))
+        var path = Path()
 
-        val jetStart = vec(jetWidth/2, jetStartDistance).flipY()
-        val jetEnd = vec(jetWidth/2 + jetLength * jetSpread, eventHorizonRadius * jetLength).flipY()
-        val jetTangent = (jetEnd - jetStart).normalize()
+        val contactX = findContactX(jetBaseSize, abs(root.tiltRatio))
+        val contactAngle = acos(contactX)
+        val contactPoint = vec(eventHorizonRadius * cos(contactAngle), eventHorizonRadius * sin(contactAngle)).flipY()
+        // the center of the ellipse
+        val ellipseY = contactPoint.y + sin(acos(contactX / jetBaseSize)) * jetBaseSize * eventHorizonRadius * abs(root.tiltRatio)
 
-        val tangentPoint = vec(eventHorizonRadius*cos(jetTangentAngle), eventHorizonRadius*sin(jetTangentAngle)).flipY()
-        val exitToStartAngle = acos((jetStart-tangentPoint).normalize().x)
-        var exitAngle = jetTangentAngle + PI/2
-        exitAngle += (exitToStartAngle-exitAngle)*jetExitAngle
-        val tangent = vec(cos(exitAngle), sin(exitAngle)).flipY()
-
-        val controlPoint = intersectLines(tangentPoint, tangent, jetStart, jetTangent) ?: return@xml
-
-        val topPath = path {
-            move(jetEnd)
-            line(jetStart)
-            quad(controlPoint, tangentPoint)
+        run { // ellipse base
             val rx = eventHorizonRadius * jetBaseSize
-            val ry = rx * root.tiltRatio
-            arc(rx, ry, 0, root.tiltRatio > 0, root.tiltRatio > 0, tangentPoint.flipX())
-            quad(controlPoint.flipX(), jetStart.flipX())
-            line(jetEnd.flipX())
-            closePath()
+            val ry = rx * abs(root.tiltRatio)
+            "ellipse" {
+                attributes(
+                    "id" to "jet-top-base",
+                    "rx" to rx,
+                    "ry" to ry,
+                    "cx" to 0,
+                    "cy" to ellipseY,
+                    "fill" to "#fff"
+                )
+            }
         }
 
-        "path" {
+        run { // tilted beam points
+            var curveEnd = vec(jetWidth / 2, ellipseY - jetStartDistance)
+            var curveStart = vec(eventHorizonRadius * jetBaseSize, ellipseY)
+
+            var tangentAngle = acos(jetBaseSize)
+            val diff = (curveEnd-curveStart).normalize()
+            val maxAngle = acos(diff.x)
+            tangentAngle += (maxAngle - tangentAngle) * jetExitAngle
+            val tangent = vec(cos(tangentAngle), sin(tangentAngle))
+
+            var jetEnd = curveEnd + vec(sin(jetSpread), cos(jetSpread)) * -jetLength
+
+            var controlPoint = intersectLines(curveStart, tangent, curveEnd, (curveEnd-jetEnd).normalize()) ?: return@xml
+
+            curveStart = (curveStart - vec(0, ellipseY)) * vec(1, root.tiltRatio) + vec(0, ellipseY)
+            curveEnd = (curveEnd - vec(0, ellipseY)) * vec(1, root.tiltRatio) + vec(0, ellipseY)
+            controlPoint = (controlPoint - vec(0, ellipseY)) * vec(1, root.tiltRatio) + vec(0, ellipseY)
+            jetEnd = (jetEnd - vec(0, ellipseY)) * vec(1, root.tiltRatio) + vec(0, ellipseY)
+
+            val topPath = path {
+                move(curveStart)
+                quad(controlPoint, curveEnd)
+                line(jetEnd)
+                line(jetEnd.flipX())
+                line(curveEnd.flipX())
+                quad(controlPoint.flipX(), curveStart.flipX())
+                closePath()
+            }
+
+            "path" {
+                attributes(
+                    "id" to "jet-top",
+                    "d" to topPath,
+                    "fill" to "#fff"
+                )
+            }
+
+            val bottomPath = path {
+//                move(jetEnd.flipY())
+//                line(jetStart.flipY())
+//                quad(controlPoint.flipY(), tangentPoint.flipY())
+//                val rx = eventHorizonRadius * jetBaseSize
+//                val ry = rx * root.tiltRatio
+//                arc(rx, ry, 0, root.tiltRatio < 0, root.tiltRatio > 0, tangentPoint.flipXY())
+//                quad(controlPoint.flipXY(), jetStart.flipXY())
+//                line(jetEnd.flipXY())
+//                closePath()
+            }
+
+//            "path" {
+//                attributes(
+//                    "id" to "jet-bottom",
+//                    "d" to bottomPath,
+//                    "fill" to "#fff"
+//                )
+//            }
+        }
+
+
+    }
+
+    private fun generateTopJetBase(): Pair<Double, Node> {
+        val circleX = findContactX(jetBaseSize, root.tiltRatio)
+        val rx = eventHorizonRadius * jetBaseSize
+        val ry = rx * root.tiltRatio
+        val ellipseX = circleX / jetBaseSize
+        val circleY = sqrt(1 - circleX * circleX)
+        val ellipseY = sqrt(1 - ellipseX * ellipseX)
+
+        val circleContactY = circleY * eventHorizonRadius
+        val ellipseContactY = ellipseY * ry
+
+        return acos(circleX) to xml("ellipse"){
             attributes(
-                "id" to "jet-top",
-                "d" to topPath,
-                "fill" to "#fff"
-            )
-        }
-
-        val bottomPath = path {
-            move(jetEnd.flipY())
-            line(jetStart.flipY())
-            quad(controlPoint.flipY(), tangentPoint.flipY())
-            val rx = eventHorizonRadius * jetBaseSize
-            val ry = rx * root.tiltRatio
-            arc(rx, ry, 0, root.tiltRatio < 0, root.tiltRatio > 0, tangentPoint.flipXY())
-            quad(controlPoint.flipXY(), jetStart.flipXY())
-            line(jetEnd.flipXY())
-            closePath()
-        }
-
-        "path" {
-            attributes(
-                "id" to "jet-bottom",
-                "d" to bottomPath,
+                "cx" to 0,
+                "cy" to ellipseContactY-circleContactY,
+                "rx" to rx,
+                "ry" to ry,
                 "fill" to "#fff"
             )
         }
     }
+
 
     /**
      * @param rx The X radius of the inner ellipse. Must be in the range (0, 1)

@@ -55,11 +55,16 @@ object Main {
 //        root.viewBox = ViewBox("tight boi", -30, -30, 60, 15)
         root.viewBox = ViewBox.SQUARE_AVATAR
 //        root.avatar.tilt = 0.0
-        root.tiltRatio = 3/9.0
-        root.avatar.halo = false
-        root.avatar.jets = true
-        root.avatar.accretionDisk = true
-        root.avatar.jetBaseSize = 0.5
+        root.tiltRatio = 4/9.0
+
+        root.avatar.apply {
+            halo = false
+            jets = true
+            accretionDisk = false
+            jetBaseSize = 0.5
+            jetExitAngle = 0.5
+            jetStartDistance = 130.0
+        }
 //        root.avatar.jetExitAngle = 0.75
 
         return root
