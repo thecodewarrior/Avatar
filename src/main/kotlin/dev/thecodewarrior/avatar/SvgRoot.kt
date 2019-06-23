@@ -12,6 +12,11 @@ import kotlin.math.roundToInt
 class SvgRoot: SvgObject() {
     var viewBox: ViewBox = ViewBox.FULL
     var imageWidth: Int = 1000
+    val imageHeight: Int
+    get() {
+        val aspectRatio = viewBox.height.toDouble()/viewBox.width
+        return (aspectRatio * imageWidth).roundToInt()
+    }
     var generateGuides: Boolean = false
     var tiltRatio = 2/9.0
 
@@ -24,13 +29,12 @@ class SvgRoot: SvgObject() {
     override fun generate(): Node = xml("svg") {
         xmlns = "http://www.w3.org/2000/svg"
 
-        val aspectRatio = viewBox.height.toDouble()/viewBox.width
         attributes(
             "xmlns:xlink" to "http://www.w3.org/1999/xlink",
             "x" to "0px",
             "y" to "0px",
             "width" to "${imageWidth}px",
-            "height" to "${(aspectRatio * imageWidth).roundToInt()}px",
+            "height" to "${imageHeight}px",
             "viewBox" to "${viewBox.minX} ${viewBox.minY} ${viewBox.width} ${viewBox.height}",
             "xml:space" to "preserve",
             "shape-rendering" to "geometricPrecision",
@@ -42,14 +46,6 @@ class SvgRoot: SvgObject() {
 
         "style"().apply {
             addElement(CssTextElement("""
-                svg.cartesian {
-                    display:flex;
-                }
-                /* Flip the vertical axis in `g` to emulate cartesian. */
-                svg.cartesian > g {
-                    transform: scaleY(-1);
-                }
-                /* Re-flip all `text` element descendants to their original side up. */
                 svg.cartesian > g text {
                     transform: scaleY(-1);
                 }
@@ -69,6 +65,9 @@ class SvgRoot: SvgObject() {
 
         Path.arcYFlipped = true
         "g" {
+            attributes(
+                "transform" to "scale(1 -1)"
+            )
 
             addNode(avatar.generate())
 

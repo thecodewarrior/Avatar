@@ -45,7 +45,7 @@ object Main {
      */
     fun getRoot(): SvgRoot {
         val root = SvgRoot()
-        exportImage = false
+        exportImage = true
         root.imageWidth = 500
 //        root.viewBox = ViewBox("tight boi", -31, -11, 4, 4)
 //        root.viewBox = ViewBox("tight boi", -35, -45, 70, 90)

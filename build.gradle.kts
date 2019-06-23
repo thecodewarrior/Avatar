@@ -17,6 +17,7 @@ dependencies {
     compile(kotlin("stdlib-jdk8"))
     compile("org.apache.xmlgraphics:batik-rasterizer:1.11")
     compile("org.redundent:kotlin-xml-builder:1.5.1")
+    compile("io.humble:humble-video-all:0.3.0")
 }
 
 configure<JavaPluginConvention> {
