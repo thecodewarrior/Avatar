@@ -1,9 +1,6 @@
 package dev.thecodewarrior.avatar
 
-import dev.thecodewarrior.avatar.generator.SvgGenerator
 import org.apache.batik.transcoder.TranscoderException
-import org.redundent.kotlin.xml.PrintOptions
-import org.redundent.kotlin.xml.xml
 import java.io.File
 import javax.imageio.ImageIO
 
@@ -48,22 +45,40 @@ object Main {
      */
     fun getRoot(): SvgRoot {
         val root = SvgRoot()
-        exportImage = true
-        root.imageWidth = 500
+        exportImage = false
+        root.imageWidth = 2000
 //        root.viewBox = ViewBox("tight boi", -31, -11, 4, 4)
 //        root.viewBox = ViewBox("tight boi", -35, -45, 70, 90)
-//        root.viewBox = ViewBox("tight boi", -30, -30, 60, 15)
+//        root.viewBox = ViewBox("tight boi", -80, 0, 80, 80)
         root.viewBox = ViewBox.SQUARE_AVATAR
 //        root.avatar.tilt = 0.0
-        root.tiltRatio = 4/9.0
+        root.tiltRatio = 1/90.0
 
         root.avatar.apply {
+            tiltX = Math.toRadians(-30.0)
+            eventHorizonStyle = mapOf(
+                "stroke" to "#0f0",
+                "stroke-width" to 0.1,
+                "fill" to "none"
+            )
+
             halo = false
+            accretionDisk = true
+            accretionDiskStyle = mapOf(
+                "stroke" to "#0f0",
+                "stroke-width" to 0.1,
+                "fill" to "none"
+            )
+
             jets = true
-            accretionDisk = false
             jetBaseSize = 0.5
             jetExitAngle = 0.5
-            jetStartDistance = 130.0
+            jetStartDistance = 20.0
+            jetStyle = mapOf(
+                "stroke" to "#f00",
+                "stroke-width" to 0.1,
+                "fill" to "none"
+            )
         }
 //        root.avatar.jetExitAngle = 0.75
 

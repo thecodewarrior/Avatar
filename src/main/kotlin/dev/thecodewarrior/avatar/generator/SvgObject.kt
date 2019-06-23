@@ -4,6 +4,6 @@ import dev.thecodewarrior.avatar.util.Vec2d
 import org.redundent.kotlin.xml.Node
 import org.redundent.kotlin.xml.xml
 
-interface SvgGenerator {
-    fun generate(): Node
+abstract class SvgObject {
+    abstract fun generate(): Node
 }

@@ -270,7 +270,7 @@ class Path {
      */
     fun arc(radiusX: Number, radiusY: Number, angle: Number, largeArc: Boolean, clockwise: Boolean, end: Vec2d) = build {
         startCurve()
-        addCommand('A', radiusX, radiusY, angle, if(largeArc) 1 else 0, if(clockwise) 1 else 0, end.x, end.y)
+        addCommand('A', radiusX, radiusY, angle, if(largeArc) 1 else 0, if(clockwise != arcYFlipped) 1 else 0, end.x, end.y)
         newPos(end)
     }
 
@@ -313,5 +313,7 @@ class Path {
             path.callback()
             return path.build()
         }
+
+        var arcYFlipped: Boolean = false
     }
 }
