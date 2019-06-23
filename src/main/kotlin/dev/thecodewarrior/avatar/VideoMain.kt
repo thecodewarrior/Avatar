@@ -49,7 +49,7 @@ object VideoMain {
 
     fun exportVideo(renderer: SvgRenderer) {
         val svgOut = File("tmp.svg")
-        val videoOut = File("out.webm")
+        val videoOut = File("out.m4v")
 
         val fps = 20
         val seconds = 5.0
@@ -61,7 +61,8 @@ object VideoMain {
 
         val root = SvgRoot()
         root.imageWidth = 500
-        root.viewBox = ViewBox.SQUARE_AVATAR
+//        root.viewBox = ViewBox.SQUARE_AVATAR
+        root.viewBox = ViewBox("tight boi", -80, -80, 100, 100)
 
         val videoEncoder = VideoEncoder(
             fps, root.imageWidth, root.imageHeight, videoOut, null, null
@@ -111,8 +112,8 @@ object VideoMain {
         val timeAngle = seconds * PI
         root.avatar.apply {
             tiltX = Math.toRadians(-13.0)
-            jetTiltZ = Math.toRadians(-45 + 15 * sin(timeAngle))
-            jetTiltX = Math.toRadians(-13 + 15 * cos(timeAngle))
+            jetTiltZ = Math.toRadians(-45 + 20 * sin(timeAngle))
+            jetTiltX = Math.toRadians(-10 + 20 * cos(timeAngle))
 
             halo = false
             accretionDisk = true
@@ -120,6 +121,17 @@ object VideoMain {
             jetBaseSize = 0.6
             jetExitAngle = 0.2
             jetStartDistance = 50.0
+
+            jetDebugStyle = mapOf(
+                "stroke" to "#f00",
+                "stroke-width" to 0.25,
+                "fill" to "none"
+            )
+            jetStyle = mapOf(
+//                "stroke" to "#0f0",
+//                "stroke-width" to 0.25,
+                "fill" to "none"
+            )
         }
     }
 

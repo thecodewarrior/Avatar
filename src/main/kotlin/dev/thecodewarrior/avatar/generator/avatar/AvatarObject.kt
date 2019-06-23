@@ -4,6 +4,8 @@ import dev.thecodewarrior.avatar.SvgRoot
 import dev.thecodewarrior.avatar.dsl.Path
 import dev.thecodewarrior.avatar.generator.SvgObject
 import dev.thecodewarrior.avatar.util.Vec2d
+import dev.thecodewarrior.avatar.util.distinctColor
+import dev.thecodewarrior.avatar.util.hex
 import dev.thecodewarrior.avatar.util.intersectLines
 import dev.thecodewarrior.avatar.util.path
 import dev.thecodewarrior.avatar.util.vec
@@ -100,6 +102,7 @@ class AvatarObject(val root: SvgRoot): SvgObject() {
     var jetStartDistance = 20.0
     var jetExitAngle = 0.0
     var jetStyle: Map<String, Any?> = mapOf("fill" to "#fff")
+    var jetDebugStyle: Map<String, Any?> = mapOf("fill" to "none")
 
     private fun generateJets(): Node = xml("g") {
         attributes(
@@ -113,20 +116,20 @@ class AvatarObject(val root: SvgRoot): SvgObject() {
         val ellipseY = eventHorizonRadius * sliceY * yFactor
         val baseRadius = (eventHorizonRadius * jetBaseSize)
 
-        run { // ellipse base
-            val rx = baseRadius
-            val ry = rx * abs(zFactor)
-            "ellipse" {
-                attributes(
-                    "id" to "jet-top-base",
-                    "rx" to rx,
-                    "ry" to ry,
-                    "cx" to 0,
-                    "cy" to ellipseY
-                )
-                attributes.putAll(jetStyle)
-            }
-        }
+//        run { // ellipse base
+//            val rx = baseRadius
+//            val ry = rx * abs(zFactor)
+//            "ellipse" {
+//                attributes(
+//                    "id" to "jet-top-base",
+//                    "rx" to rx,
+//                    "ry" to ry,
+//                    "cx" to 0,
+//                    "cy" to ellipseY
+//                )
+//                attributes.putAll(jetStyle)
+//            }
+//        }
 
         run { // tilted beam points
             var curveEnd = vec(jetWidth / 2, jetStartDistance)
@@ -149,11 +152,11 @@ class AvatarObject(val root: SvgRoot): SvgObject() {
 
             val rx = baseRadius-controlPoint.x
             val h = controlPoint.y/(rx*zFactor)
-            val angle = -asin(1/h)
+            val angle = asin(1/h)
 
             var curveStartBack = vec(
                 cos(angle) * baseRadius,
-                sin(angle) * abs(zFactor) * baseRadius
+                sin(angle) * zFactor * baseRadius
             )
             var controlPointBack = vec(
                 cos(angle) * controlPoint.x,
@@ -173,46 +176,110 @@ class AvatarObject(val root: SvgRoot): SvgObject() {
             curveStartBack += ellipsePos
             controlPointBack += ellipsePos
 
-//            run { // ellipse neck
-//                val rx = curveEnd.x
-//                val ry = rx * abs(sin(jetTiltX))
-//                "ellipse" {
+            run { // debug
+                run {
+                    val rx = baseRadius
+                    val ry = rx * abs(zFactor)
+                    "ellipse" {
+                        attributes(
+                            "rx" to rx,
+                            "ry" to ry,
+                            "cx" to 0,
+                            "cy" to ellipseY
+                        )
+                        attributes.putAll(jetDebugStyle)
+                    }
+                }
+
+                run {
+                    val rx = curveEnd.x
+                    val ry = rx * abs(zFactor)
+                    "ellipse" {
+                        attributes(
+                            "rx" to rx,
+                            "ry" to ry,
+                            "cx" to 0,
+                            "cy" to curveEnd.y
+                        )
+                        attributes.putAll(jetDebugStyle)
+                    }
+                }
+
+                run {
+                    val rx = controlPoint.x
+                    val ry = rx * abs(zFactor)
+                    "ellipse" {
+                        attributes(
+                            "rx" to rx,
+                            "ry" to ry,
+                            "cx" to 0,
+                            "cy" to controlPoint.y
+                        )
+                        attributes.putAll(jetDebugStyle)
+                    }
+                }
+
+                ((0 until 360 step 5).map { it.toDouble() } + listOf(Math.toDegrees(angle))).forEach {
+                    val angle = Math.toRadians(it)
+                    var curveStart = vec(
+                        cos(angle) * baseRadius,
+                        sin(angle) * zFactor * baseRadius + ellipseY
+                    )
+                    var controlPoint = vec(
+                        cos(angle) * controlPoint.x,
+                        controlPoint.y + sin(angle) * zFactor * controlPoint.x
+                    )
+                    var curveEnd = vec(
+                        cos(angle) * curveEnd.x,
+                        curveEnd.y + sin(angle) * zFactor * curveEnd.x
+                    )
+                    "path" {
+                        attributes(
+                            "d" to path {
+
+//                                move(curveStart)
+//                                line(controlPoint)
+//                                move(curveStart)
+//                                line(curveEnd)
+
+                                move(curveStart)
+                                quad(controlPoint, curveEnd)
+                                move(vec(0, curveEnd.y))
+                                closePath()
+                            }
+                        )
+                        attributes.putAll(jetDebugStyle)
+                        attributes["stroke"] = "#${distinctColor(it.toInt()).hex}"
+                    }
+                }
+//                "path" {
 //                    attributes(
-//                        "id" to "jet-top-neck",
-//                        "rx" to rx,
-//                        "ry" to ry,
-//                        "cx" to 0,
-//                        "cy" to curveEnd.y
+//                        "d" to path {
+//                            move(jetEnd)
+//                            line(curveEndBack)
+//                            quad(controlPointBack, curveStartBack)
+//                            line(curveStartBack.flipX())
+//                            quad(controlPointBack.flipX(), curveEndBack.flipX())
+//                            line(jetEnd.flipX())
+//                            closePath()
+//                        }
 //                    )
-//                    attributes.putAll(jetStyle)
+//                    attributes.putAll(jetDebugStyle)
 //                }
-//            }
-//
-//            run { // ellipse neck
-//                val rx = controlPoint.x
-//                val ry = rx * abs(sin(jetTiltX))
-//                "ellipse" {
-//                    attributes(
-//                        "id" to "jet-top-control",
-//                        "rx" to rx,
-//                        "ry" to ry,
-//                        "cx" to 0,
-//                        "cy" to controlPoint.y
-//                    )
-//                    attributes.putAll(jetStyle)
-//                }
-//            }
+            }
+
 
             "path" {
                 attributes(
                     "id" to "jet-top",
                     "d" to path {
-                        move(jetEnd)
-                        line(curveEnd)
+//                        move(jetEnd)
+                        move(curveEnd)
                         quad(controlPoint, curveStart)
+//                        line(curveStart.flipX())
                         arc(baseRadius, baseRadius * abs(zFactor), 0, jetTiltX < 0, jetTiltX < 0, curveStart.flipX())
                         quad(controlPoint.flipX(), curveEnd.flipX())
-                        line(jetEnd.flipX())
+//                        line(jetEnd.flipX())
                         closePath()
                     }
                 )
@@ -222,17 +289,37 @@ class AvatarObject(val root: SvgRoot): SvgObject() {
                 attributes(
                     "id" to "jet-top-back",
                     "d" to path {
-                        move(jetEnd)
-                        line(curveEndBack)
+//                        move(jetEnd)
+                        move(curveEndBack)
                         quad(controlPointBack, curveStartBack)
+//                        line(curveStartBack.flipX())
                         arc(baseRadius, baseRadius * abs(zFactor), 0, jetTiltX < 0, jetTiltX < 0, curveStartBack.flipX())
                         quad(controlPointBack.flipX(), curveEndBack.flipX())
-                        line(jetEnd.flipX())
+//                        line(jetEnd.flipX())
                         closePath()
                     }
                 )
                 attributes.putAll(jetStyle)
             }
+
+//            run { // ellipse base
+//                val rx = baseRadius
+//                val ry = rx * abs(zFactor)
+//                "ellipse" {
+//                    attributes(
+//                        "id" to "jet-top-mask",
+//                        "rx" to rx,
+//                        "ry" to ry,
+//                        "cx" to 0,
+//                        "cy" to ellipseY
+//                    )
+//                    if(jetTiltX < 0)
+//                        attributes.putAll(jetStyle)
+//                    else
+//                        attributes.putAll(eventHorizonStyle)
+//                }
+//            }
+
 
 
             jetEnd = jetEnd.flipY()
@@ -243,39 +330,77 @@ class AvatarObject(val root: SvgRoot): SvgObject() {
             curveStartBack = curveStartBack.flipY()
             controlPointBack = controlPointBack.flipY()
 
-            "path" {
-                attributes(
-                    "id" to "jet-bottom",
-                    "d" to path {
-                            move(jetEnd)
-                            line(curveEnd)
-                            quad(controlPoint, curveStart)
-                            arc(baseRadius, baseRadius * abs(zFactor), 0, jetTiltX > 0, jetTiltX < 0, curveStart.flipX())
-                            quad(controlPoint.flipX(), curveEnd.flipX())
-                            line(jetEnd.flipX())
-                            closePath()
-                        }
-                )
+            "defs" { // ellipse base
+                "mask"(
+                    "id" to "jet-bottom-mask"
+                ) {
+                    "rect"(
+                        "fill" to "#fff",
+                        "x" to -100,
+                        "y" to -100,
+                        "width" to 200,
+                        "height" to 200
+                    )
+
+                    if (jetTiltX < 0)
+                        "ellipse"(
+                            "rx" to baseRadius,
+                            "ry" to baseRadius * abs(zFactor),
+                            "cx" to 0,
+                            "cy" to -ellipseY,
+                            "fill" to "#000"
+                        )
+                }
+            }
+
+            "path"(
+                "id" to "jet-bottom",
+//                "mask" to "url(#jet-bottom-mask)",
+                "d" to path {
+                    move(jetEnd)
+                    line(curveEnd)
+                    quad(controlPoint, curveStart)
+                    line(curveStart.flipX())
+                    quad(controlPoint.flipX(), curveEnd.flipX())
+                    line(jetEnd.flipX())
+                    closePath()
+                }
+            ) {
                 attributes.putAll(jetStyle)
             }
-            "path" {
-                attributes(
-                    "id" to "jet-bottom-back",
-                    "d" to path {
-                        move(jetEnd)
-                        line(curveEndBack)
-                        quad(controlPointBack, curveStartBack)
-                        arc(baseRadius, baseRadius * abs(zFactor), 0, jetTiltX > 0, jetTiltX < 0, curveStartBack.flipX())
-                        quad(controlPointBack.flipX(), curveEndBack.flipX())
-                        line(jetEnd.flipX())
-                        closePath()
-                    }
-                )
+            "path"(
+                "id" to "jet-bottom-back",
+//                "mask" to "url(#jet-bottom-mask)",
+                "d" to path {
+                    move(jetEnd)
+                    line(curveEndBack)
+                    quad(controlPointBack, curveStartBack)
+                    line(curveStartBack.flipX())
+                    quad(controlPointBack.flipX(), curveEndBack.flipX())
+                    line(jetEnd.flipX())
+                    closePath()
+                }
+            ) {
                 attributes.putAll(jetStyle)
             }
+//            "path" {
+//                attributes(
+//                    "id" to "jet-bottom-mask",
+//                    "d" to path {
+//                        move(curveStartBack)
+//                        arc(baseRadius, baseRadius * abs(zFactor), 0, jetTiltX > 0, jetTiltX < 0, curveStartBack.flipX())
+//                        quad(controlPointBack.flipX(), curveEndBack.flipX())
+//                        line(jetEnd.flipX())
+//                        closePath()
+//                    }
+//                )
+//                if(jetTiltX > 0)
+//                    attributes.putAll(jetStyle)
+//                else
+//                    attributes.putAll(eventHorizonStyle)
+//            }
+
         }
-
-
     }
 
     private fun generateTopJetBase(): Pair<Double, Node> {
