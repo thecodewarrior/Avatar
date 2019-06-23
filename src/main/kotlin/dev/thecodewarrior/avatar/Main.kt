@@ -46,41 +46,23 @@ object Main {
     fun getRoot(): SvgRoot {
         val root = SvgRoot()
         exportImage = false
-        root.imageWidth = 2000
+        root.imageWidth = 500
 //        root.viewBox = ViewBox("tight boi", -31, -11, 4, 4)
 //        root.viewBox = ViewBox("tight boi", -35, -45, 70, 90)
-//        root.viewBox = ViewBox("tight boi", -80, 0, 80, 80)
+//        root.viewBox = ViewBox("tight boi", -40, -40, 80, 40)
         root.viewBox = ViewBox.SQUARE_AVATAR
-//        root.avatar.tilt = 0.0
-        root.tiltRatio = 1/90.0
 
         root.avatar.apply {
-            tiltX = Math.toRadians(-30.0)
-            eventHorizonStyle = mapOf(
-                "stroke" to "#0f0",
-                "stroke-width" to 0.1,
-                "fill" to "none"
-            )
-
+            tiltX = Math.toRadians(-13.0)
+            jetTiltX = Math.toRadians(-13.0)
             halo = false
             accretionDisk = true
-            accretionDiskStyle = mapOf(
-                "stroke" to "#0f0",
-                "stroke-width" to 0.1,
-                "fill" to "none"
-            )
 
             jets = true
-            jetBaseSize = 0.5
-            jetExitAngle = 0.5
-            jetStartDistance = 20.0
-            jetStyle = mapOf(
-                "stroke" to "#f00",
-                "stroke-width" to 0.1,
-                "fill" to "none"
-            )
+            jetBaseSize = 0.6
+            jetExitAngle = 0.2
+            jetStartDistance = 50.0
         }
-//        root.avatar.jetExitAngle = 0.75
 
         return root
     }

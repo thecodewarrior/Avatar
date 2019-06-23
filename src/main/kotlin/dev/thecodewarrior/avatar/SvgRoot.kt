@@ -31,7 +31,7 @@ class SvgRoot: SvgObject() {
             "y" to "0px",
             "width" to "${imageWidth}px",
             "height" to "${(aspectRatio * imageWidth).roundToInt()}px",
-            "viewBox" to "${viewBox.minX} ${-(viewBox.minY + viewBox.height) /* flip */} ${viewBox.width} ${viewBox.height}",
+            "viewBox" to "${viewBox.minX} ${viewBox.minY} ${viewBox.width} ${viewBox.height}",
             "xml:space" to "preserve",
             "shape-rendering" to "geometricPrecision",
 
@@ -56,18 +56,19 @@ class SvgRoot: SvgObject() {
             """.trimIndent()))
         }
 
+        "rect" {
+            attributes(
+                "id" to "background",
+                "x" to viewBox.minX,
+                "y" to viewBox.minY,
+                "width" to viewBox.width,
+                "height" to viewBox.height,
+                "fill" to "#000"
+            )
+        }
+
         Path.arcYFlipped = true
         "g" {
-            "rect" {
-                attributes(
-                    "id" to "background",
-                    "x" to viewBox.minX,
-                    "y" to viewBox.minY,
-                    "width" to viewBox.width,
-                    "height" to viewBox.height,
-                    "fill" to "#000"
-                )
-            }
 
             addNode(avatar.generate())
 
