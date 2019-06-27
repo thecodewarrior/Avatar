@@ -55,25 +55,27 @@ object Main {
 
         root.avatar.apply {
             tiltX = Math.toRadians(-13.0)
-            jetTiltX = Math.toRadians(-35.0)
             halo = false
             accretionDisk = true
 
             jets = true
-            jetBaseSize = 0.6
-            jetExitAngle = 0.2
-            jetStartDistance = 20.0
+            jetObject.config.apply {
+                tiltX = Math.toRadians(-35.0)
+                baseSize = 0.6
+                exitAngle = 0.2
+                startDistance = 20.0
 
-            jetDebugStyle = mapOf(
-                "stroke" to "#f00",
-                "stroke-width" to 0.002,
-                "fill" to "none"
-            )
-            jetStyle = mapOf(
+                debugStyle = mapOf(
+                    "stroke" to "#f00",
+                    "stroke-width" to 0.01,
+                    "fill" to "none"
+                )
+                style = mapOf(
 //                "stroke" to "#0f0",
 //                "stroke-width" to 0.01,
-                "fill" to "none"
-            )
+                    "fill" to "#fff"
+                )
+            }
 
             eventHorizonStyle = mapOf(
 //                "stroke" to "#0f0",

@@ -49,10 +49,10 @@ object VideoMain {
 
     fun exportVideo(renderer: SvgRenderer) {
         val svgOut = File("tmp.svg")
-        val videoOut = File("out.m4v")
+        val videoOut = File("out.mov")
 
         val fps = 20
-        val seconds = 5.0
+        val seconds = 20.0
         val frameCount = (seconds * fps).toInt()
 
         println("Generating %.2f seconds of video at %d frames per second (total of %d frames)".format(
@@ -60,9 +60,9 @@ object VideoMain {
         ))
 
         val root = SvgRoot()
-        root.imageWidth = 500
+        root.imageWidth = 1920
 //        root.viewBox = ViewBox.SQUARE_AVATAR
-        root.viewBox = ViewBox("tight boi", -80, -80, 100, 100)
+        root.viewBox = ViewBox("tight boi", -80, -80, 160, 90)
 
         val videoEncoder = VideoEncoder(
             fps, root.imageWidth, root.imageHeight, videoOut, null, null
@@ -112,26 +112,28 @@ object VideoMain {
         val timeAngle = seconds * PI
         root.avatar.apply {
             tiltX = Math.toRadians(-13.0)
-            jetTiltZ = Math.toRadians(-45 + 20 * sin(timeAngle))
-            jetTiltX = Math.toRadians(-10 + 20 * cos(timeAngle))
-
             halo = false
             accretionDisk = true
-            jets = true
-            jetBaseSize = 0.6
-            jetExitAngle = 0.2
-            jetStartDistance = 50.0
 
-            jetDebugStyle = mapOf(
-                "stroke" to "#f00",
-                "stroke-width" to 0.25,
-                "fill" to "none"
-            )
-            jetStyle = mapOf(
+            jets = true
+            jetObject.config.apply {
+                tiltZ = Math.toRadians(-45 + 20 * sin(timeAngle))
+                tiltX = Math.toRadians(-10 + 20 * cos(timeAngle))
+                baseSize = 0.6
+                exitAngle = 0.2
+                startDistance = 50.0
+
+                debugStyle = mapOf(
+                    "stroke" to "#f00",
+                    "stroke-width" to 0.25,
+                    "fill" to "none"
+                )
+                style = mapOf(
 //                "stroke" to "#0f0",
 //                "stroke-width" to 0.25,
-                "fill" to "none"
-            )
+                    "fill" to "none"
+                )
+            }
         }
     }
 
