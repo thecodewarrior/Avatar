@@ -116,7 +116,7 @@ object VideoMain {
             accretionDisk = true
 
             jets = true
-            jetObject.config.apply {
+            jetConfig.apply {
                 tiltZ = Math.toRadians(-45 + 20 * sin(timeAngle))
                 tiltX = Math.toRadians(-10 + 20 * cos(timeAngle))
                 baseSize = 0.6

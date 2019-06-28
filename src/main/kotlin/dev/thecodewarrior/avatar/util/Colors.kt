@@ -2,9 +2,12 @@ package dev.thecodewarrior.avatar.util
 
 import java.awt.Color
 import kotlin.math.abs
+import kotlin.random.Random
 
 fun distinctColor(seed: Any): Color {
-    return distinctColors[abs(seed.hashCode()) % distinctColors.size]
+    val hash = seed.hashCode()
+    val index = if(hash < 0) abs(Int.MAX_VALUE + hash) else hash
+    return distinctColors[index % distinctColors.size]
 }
 val distinctColors = listOf(
     Color(0xe6194b),
@@ -35,3 +38,9 @@ fun Color(hex: String): Color = Color.decode(hex)
 val Color.hex: String get() = "%02x%02x%02x".format(this.red, this.green, this.blue)
 val Color.rgba: String get() = "%02x%02x%02x%02x".format(this.red, this.green, this.blue, this.alpha)
 val Color.argb: String get() = "%02x%02x%02x%02x".format(this.alpha, this.red, this.green, this.blue)
+fun Color.copy(
+    red: Int = this.red,
+    green: Int = this.green,
+    blue: Int = this.blue,
+    alpha: Int = this.alpha
+) = Color(red, green, blue, alpha)

@@ -59,7 +59,7 @@ object Main {
             accretionDisk = true
 
             jets = true
-            jetObject.config.apply {
+            jetConfig.apply {
                 tiltX = Math.toRadians(-35.0)
                 baseSize = 0.6
                 exitAngle = 0.2

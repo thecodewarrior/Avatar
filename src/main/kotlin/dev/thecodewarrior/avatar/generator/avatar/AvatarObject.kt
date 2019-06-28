@@ -34,7 +34,7 @@ class AvatarObject(val root: SvgRoot): SvgObject() {
     var haloRadius = 40
     var accretionDiskRadius = 90
 
-    val jetObject = JetObject(this)
+    val jetConfig = JetObject.Configuration()
 
     override fun generate(): Node = xml("g") {
         val zFactor = sin(tiltX)
@@ -91,7 +91,7 @@ class AvatarObject(val root: SvgRoot): SvgObject() {
         }
 
         if (jets) {
-            addNode(jetObject.generateJets())
+            addNode(JetObject(this@AvatarObject, jetConfig).generateJets())
         }
     }
 }
