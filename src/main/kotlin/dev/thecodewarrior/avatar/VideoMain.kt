@@ -1,28 +1,19 @@
 package dev.thecodewarrior.avatar
 
 import io.humble.video.Codec
-import io.humble.video.Muxer
-import io.humble.video.Rational
-import org.apache.batik.transcoder.TranscoderException
-import java.io.File
-import javax.imageio.ImageIO
-import io.humble.video.Codec.findEncodingCodec
-import io.humble.video.Codec.findEncodingCodecByName
-import io.humble.video.Encoder
-import io.humble.video.MuxerFormat
-import io.humble.video.PixelFormat
-import javax.swing.Spring.height
-import io.humble.video.MediaPicture
-import io.humble.video.awt.MediaPictureConverter
-import com.sun.corba.se.impl.protocol.giopmsgheaders.MessageBase.setFlag
 import io.humble.video.Coder
 import io.humble.video.ContainerFormat
-import com.sun.xml.internal.ws.streaming.XMLStreamReaderUtil.close
-import java.lang.reflect.Array.getDouble
-import io.humble.video.awt.MediaPictureConverterFactory
-import java.awt.image.BufferedImage
-import io.humble.video.awt.MediaPictureConverterFactory.convertToType
+import io.humble.video.Encoder
 import io.humble.video.MediaPacket
+import io.humble.video.MediaPicture
+import io.humble.video.Muxer
+import io.humble.video.PixelFormat
+import io.humble.video.Rational
+import io.humble.video.awt.MediaPictureConverter
+import io.humble.video.awt.MediaPictureConverterFactory
+import org.apache.batik.transcoder.TranscoderException
+import java.awt.image.BufferedImage
+import java.io.File
 import kotlin.math.PI
 import kotlin.math.cos
 import kotlin.math.sin
@@ -60,9 +51,9 @@ object VideoMain {
         ))
 
         val root = SvgRoot()
-        root.imageWidth = 1920
-//        root.viewBox = ViewBox.SQUARE_AVATAR
-        root.viewBox = ViewBox("tight boi", -80, -80, 160, 90)
+        root.imageWidth = 500
+        root.viewBox = ViewBox.SQUARE_AVATAR
+//        root.viewBox = ViewBox("tight boi", -80, -80, 160, 90)
 
         val videoEncoder = VideoEncoder(
             fps, root.imageWidth, root.imageHeight, videoOut, null, null
@@ -117,22 +108,18 @@ object VideoMain {
 
             jets = true
             jetConfig.apply {
-                tiltZ = Math.toRadians(-45 + 20 * sin(timeAngle))
-                tiltX = Math.toRadians(-10 + 20 * cos(timeAngle))
+                tiltZ = Math.toRadians(45 * sin(timeAngle))
+                tiltX = Math.toRadians(45 * cos(timeAngle))
                 baseSize = 0.6
                 exitAngle = 0.2
                 startDistance = 50.0
 
-                debugStyle = mapOf(
-                    "stroke" to "#f00",
-                    "stroke-width" to 0.25,
-                    "fill" to "none"
-                )
-                style = mapOf(
+//                debugColors = true
+//                style = mapOf(
 //                "stroke" to "#0f0",
 //                "stroke-width" to 0.25,
-                    "fill" to "none"
-                )
+//                    "fill" to "none"
+//                )
             }
         }
     }

@@ -24,6 +24,8 @@ class SvgRoot: SvgObject() {
 
     val pixelsPerPoint: Int
         get() = imageWidth/viewBox.width
+    val pointsPerPixel: Double
+        get() = viewBox.width.toDouble()/imageWidth
 
     // y-flipping code is from: https://stackoverflow.com/a/38811507/1541907
     override fun generate(): Node = xml("svg") {

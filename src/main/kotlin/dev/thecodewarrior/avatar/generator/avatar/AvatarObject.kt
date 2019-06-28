@@ -16,6 +16,7 @@ import kotlin.math.acos
 import kotlin.math.asin
 import kotlin.math.atan2
 import kotlin.math.cos
+import kotlin.math.sign
 import kotlin.math.sin
 import kotlin.math.sqrt
 
@@ -66,6 +67,12 @@ class AvatarObject(val root: SvgRoot): SvgObject() {
             attributes.putAll(eventHorizonStyle)
         }
 
+        val jetObject = JetObject(this@AvatarObject, jetConfig)
+
+        if (jets) {
+            addNode(jetObject.generateJets(tiltX >= 0))
+        }
+
         if (accretionDisk) {
             "ellipse" {
                 attributes(
@@ -91,7 +98,7 @@ class AvatarObject(val root: SvgRoot): SvgObject() {
         }
 
         if (jets) {
-            addNode(JetObject(this@AvatarObject, jetConfig).generateJets())
+            addNode(jetObject.generateJets(tiltX < 0))
         }
     }
 }
