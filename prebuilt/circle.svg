@@ -1,0 +1,10 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+     x="0px" y="0px" width="500px" height="500px" viewBox="-100 -100 200 200" xml:space="preserve">
+    <rect x="-100" y="-100" width="200" height="200" fill="#000"/>
+    <g id="main-avatar" transform="rotate(-45)">
+        <circle id="halo" cx="0" cy="0" r="40" fill="#FFF"/>
+        <circle id="event-horizon-back" cx="0" cy="0" r="30" fill="#000"/>
+        <ellipse id="accretion-disk" cx="0" cy="0" rx="90" ry="20" fill="#FFF"/>
+        <path d="M-30,0 A1,1 0 0,1 30,0 A9,2 0 0,1 -30,0" fill="#000"/>
+    </g>
+</svg>

@@ -1,0 +1,17 @@
+<svg id="main-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     x="0px" y="0px" width="500px" height="500px" viewBox="-88 -88 180 180" xml:space="preserve">
+    <defs>
+        <symbol id="gear" viewBox="0 0 200 200">
+          <path d="M 199.69 92.15 L 199.69 107.85 L 174.54 115.97 L 169.69 130.89 L 185.26 152.25 L 176.04 164.94 L 150.91 156.74 L 138.23 165.95 L 138.27 192.39 L 123.34 197.24 L 107.84 175.83 L 92.16 175.83 L 76.66 197.24 L 61.73 192.39 L 61.77 165.95 L 49.09 156.74 L 23.96 164.94 L 14.74 152.25 L 30.31 130.89 L 25.46 115.97 L 0.31 107.85 L 0.31 92.15 L 25.46 84.03 L 30.31 69.11 L 14.74 47.75 L 23.96 35.06 L 49.09 43.26 L 61.77 34.05 L 61.73 7.61 L 76.66 2.76 L 92.16 24.17 L 107.84 24.17 L 123.34 2.76 L 138.27 7.61 L 138.23 34.05 L 150.91 43.26 L 176.04 35.06 L 185.26 47.75 L 169.69 69.11 L 174.54 84.03 L 199.69 92.15 Z" fill="#FFF"/>
+          <circle cx="100" cy="100" r="20" fill="#03750F"/>
+        </symbol>
+    </defs>
+
+    <!-- "ideal" for 180 width would be -90, but that looks off-center -->
+    <rect id="background" x="-88" y="-88" width="180" height="180" fill="#03750F"/>
+    <g style="transform-origin: 6.8415px -4.766px;" transform="translate(-1, -1) rotate(-20)">
+        <use width="70" height="70" x="-45" y="-75" xlink:href="#gear"/>
+        <use width="70" height="70" x="0" y="-31" xlink:href="#gear"/>
+        <use width="70" height="70" x="-55.7" y="-1.8" xlink:href="#gear"/>
+    </g>
+</svg>
