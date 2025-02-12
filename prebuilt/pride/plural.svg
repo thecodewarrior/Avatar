@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-250 -250 500 500" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <bx:export>
+      <bx:file format="png" path="plural.png" width="500" height="500"/>
+    </bx:export>
+  </defs>
+  <g style="">
+    <title>fill</title>
+    <path style="fill: rgb(254, 220, 67);" d="M -132.858,-132.858 A 139,139 0 0 1 132.858,-132.858 A 139,139 0 0 0 0,-104.197 A 139,139 0 0 0 -132.858,-132.858 Z">
+      <title>outer-top</title>
+    </path>
+    <path style="fill: rgb(254, 85, 147);" d="M 132.858,-132.858 A 139,139 0 0 1 132.858,132.858 A 139,139 0 0 0 104.197,0 A 139,139 0 0 0 132.858,-132.858 Z">
+      <title>outer-right</title>
+    </path>
+    <path style="fill: rgb(66, 163, 238);" d="M 132.858,132.858 A 139,139 0 0 1 -132.858,132.858 A 139,139 0 0 0 0,104.197 A 139,139 0 0 0 132.858,132.858 Z">
+      <title>outer-bottom</title>
+    </path>
+    <path style="fill: rgb(8, 210, 139);" d="M -132.858,132.858 A 139,139 0 0 1 -132.858,-132.858 A 139,139 0 0 0 -104.197,0 A 139,139 0 0 0 -132.858,132.858 Z">
+      <title>outer-left</title>
+    </path>
+    <path style="fill: rgb(141, 236, 105);" d="M -132.858,-132.858 A 139,139 0 0 0 -104.197,0 A 139,139 0 0 1 -40.859,-40.859 A 139,139 0 0 1 0,-104.197 A 139,139 0 0 0 -132.858,-132.858 Z">
+      <title>corner-top-left</title>
+    </path>
+    <path style="fill: rgb(254, 182, 0);" d="M 132.858,-132.858 A 139,139 0 0 1 104.197,0 A 139,139 0 0 0 40.859,-40.859 A 139,139 0 0 0 0,-104.197 A 139,139 0 0 1 132.858,-132.858 Z">
+      <title>corner-top-right</title>
+    </path>
+    <path style="fill: rgb(149, 56, 174);" d="M 132.858,132.858 A 139,139 0 0 0 104.197,0 A 139,139 0 0 1 40.859,40.859 A 139,139 0 0 1 0,104.197 A 139,139 0 0 0 132.858,132.858 Z">
+      <title>corner-bottom-right</title>
+    </path>
+    <path style="fill: rgb(17, 211, 204);" d="M -132.858,132.858 A 139,139 0 0 1 -104.197,0 A 139,139 0 0 0 -40.859,40.859 A 139,139 0 0 0 0,104.197 A 139,139 0 0 1 -132.858,132.858 Z">
+      <title>corner-bottom-left</title>
+    </path>
+    <path style="fill: rgb(173, 124, 50);" d="M 0,-104.197 A 139,139 0 0 1 40.859,-40.859 A 139,139 0 0 0 -40.859,-40.859 A 139,139 0 0 1 0,-104.197 Z">
+      <title>inner-top</title>
+    </path>
+    <path style="fill: rgb(230, 49, 144);" d="M 104.197,0 A 139,139 0 0 1 40.859,40.859 A 139,139 0 0 0 40.859,-40.859 A 139,139 0 0 1 104.197,0 Z">
+      <title>inner-right</title>
+    </path>
+    <path style="fill: rgb(126, 120, 254);" d="M 0,104.197 A 139,139 0 0 1 -40.859,40.859 A 139,139 0 0 0 40.859,40.859 A 139,139 0 0 1 0,104.197 Z">
+      <title>inner-bottom</title>
+    </path>
+    <path style="fill: rgb(6, 177, 123);" d="M -104.197,0 A 139,139 0 0 1 -40.859,-40.859 A 139,139 0 0 0 -40.859,40.859 A 139,139 0 0 1 -104.197,0 Z">
+      <title>inner-left</title>
+    </path>
+    <path style="fill: rgb(255, 255, 255); visibility: hidden;" d="M -40.859,-40.859 A 139,139 0 0 1 40.859,-40.859 A 139,139 0 0 1 40.859,40.859 A 139,139 0 0 1 -40.859,40.859 A 139,139 0 0 1 -40.859,-40.859 Z">
+      <title>center</title>
+    </path>
+  </g>
+  <path style="fill: none; stroke: rgb(0, 0, 0); stroke-width: 15px;" d="M 0,-92 m -139,0 a 139,139 0 0 1 278,0 a 139,139 0 0 1 -278,0 Z M 92,0 m -139,0 a 139,139 0 0 1 278,0 a 139,139 0 0 1 -278,0 Z M 0,92 m -139,0 a 139,139 0 0 1 278,0 a 139,139 0 0 1 -278,0 Z M -92,0 m -139,0 a 139,139 0 0 1 278,0 a 139,139 0 0 1 -278,0 Z">
+    <title>lines - black</title>
+  </path>
+  <path style="fill: none; stroke: rgb(0, 0, 0); stroke-width: 3px; visibility: hidden;" d="M 0,-92 m -139,0 a 139,139 0 0 1 278,0 a 139,139 0 0 1 -278,0 Z M 92,0 m -139,0 a 139,139 0 0 1 278,0 a 139,139 0 0 1 -278,0 Z M 0,92 m -139,0 a 139,139 0 0 1 278,0 a 139,139 0 0 1 -278,0 Z M -92,0 m -139,0 a 139,139 0 0 1 278,0 a 139,139 0 0 1 -278,0 Z">
+    <title>lines - thin black</title>
+  </path>
+  <path style="fill: none; stroke-width: 15px; stroke: rgb(255, 255, 255); visibility: hidden;" d="M 0,-92 m -139,0 a 139,139 0 0 1 278,0 a 139,139 0 0 1 -278,0 Z M 92,0 m -139,0 a 139,139 0 0 1 278,0 a 139,139 0 0 1 -278,0 Z M 0,92 m -139,0 a 139,139 0 0 1 278,0 a 139,139 0 0 1 -278,0 Z M -92,0 m -139,0 a 139,139 0 0 1 278,0 a 139,139 0 0 1 -278,0 Z">
+    <title>lines - white</title>
+  </path>
+  <path style="fill: none; stroke: rgb(255, 255, 255); stroke-width: 3px; visibility: hidden;" d="M 0,-92 m -139,0 a 139,139 0 0 1 278,0 a 139,139 0 0 1 -278,0 Z M 92,0 m -139,0 a 139,139 0 0 1 278,0 a 139,139 0 0 1 -278,0 Z M 0,92 m -139,0 a 139,139 0 0 1 278,0 a 139,139 0 0 1 -278,0 Z M -92,0 m -139,0 a 139,139 0 0 1 278,0 a 139,139 0 0 1 -278,0 Z" id="object-0">
+    <title>lines - thin white</title>
+  </path>
+</svg>
