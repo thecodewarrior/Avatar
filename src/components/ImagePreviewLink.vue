@@ -12,7 +12,7 @@ const props = withDefaults(defineProps<{
 })
 
 function resolveUrl(url: string): string {
-  return url.startsWith('/') ? `/Avatar${url}` : url
+  return url.startsWith('/') ? import.meta.env.BASE_URL + url : url
 }
 </script>
 
