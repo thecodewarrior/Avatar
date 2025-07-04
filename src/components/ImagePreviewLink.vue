@@ -10,13 +10,19 @@ const props = withDefaults(defineProps<{
   rounded: false,
   altUrls: () => ({})
 })
+
+function resolveUrl(url: string): string {
+  return url.startsWith('/') ? `/Avatar${url}` : url
+}
 </script>
 
 <template>
   <div class="flex flex-col items-center">
-    <a :href="mainUrl" :class="{'rounded-full overflow-hidden': rounded}"><img :src="mainUrl" :width="width" :height="height"/></a>
+    <a :href="resolveUrl(mainUrl)" :class="{'rounded-full overflow-hidden': rounded}">
+      <img :src="resolveUrl(mainUrl)" :width="width" :height="height"/>
+    </a>
     <span v-if="name">{{name}}</span>
-    <span v-for="(altUrl, altName) in altUrls" :key="altName">(<a :href="altUrl" class="underline">{{altName}}</a>)</span>
+    <span v-for="(altUrl, altName) in altUrls" :key="altName">(<a :href="resolveUrl(altUrl)" class="underline">{{altName}}</a>)</span>
   </div>
 </template>
 
