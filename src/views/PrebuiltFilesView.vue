@@ -23,6 +23,7 @@ import ImagePreviewLink from "@/components/ImagePreviewLink.vue";
       <AlterAvatarLinks name="Sixth Part" dir="sixth" color-code="#EB8C1F"/>
       <AlterAvatarLinks name="Seventh Part" dir="seventh" color-code="#FF00FF"/>
       <AlterAvatarLinks name="Eighth Part" dir="eighth" color-code="#F45DE8"/>
+      <AlterAvatarLinks name="Other" dir="other" color-code="#949494"/>
     </div>
     <h3>Plural</h3>
     <div class="preview-grid">
