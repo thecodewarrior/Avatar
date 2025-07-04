@@ -13,39 +13,34 @@ const props = withDefaults(defineProps<{
 })
 
 const svgPath = computed(() => {
-  const angle = Math.PI/6
-  const tangentAngle = Math.PI/3
-  const r = 30
-  const beamWidth = 10
-  const beamSpread = 1
+  let {angle, tangentAngle, radius, beamWidth, beamSpread, beamLength} = props
 
-  var beamLength = 1500
-  var slope = -Math.tan(tangentAngle)
+  const slope = -Math.tan(tangentAngle)
 
-  var tangentX = r*Math.sin(angle)
-  var tangentY = r*Math.cos(angle)
+  let tangentX = radius*Math.sin(angle)
+  let tangentY = radius*Math.cos(angle)
 
-  var curveEndX = beamWidth/2
+  let curveEndX = beamWidth/2
   // y = m(x-x1)+y1
-  var controlX = beamWidth/2
-  var controlY = slope*(curveEndX-tangentX)+tangentY
+  let controlX = beamWidth/2
+  let controlY = slope*(curveEndX-tangentX)+tangentY
 
-  var controlPointDistance = Math.sqrt(Math.pow(curveEndX-tangentX, 2) + Math.pow(controlY-tangentY, 2))
-  var curveEndY = controlY + controlPointDistance
+  let controlPointDistance = Math.sqrt(Math.pow(curveEndX-tangentX, 2) + Math.pow(controlY-tangentY, 2))
+  let curveEndY = controlY + controlPointDistance
   curveEndY += 20
   curveEndX += 20*(beamSpread/beamLength)
   if(beamSpread != 0) {
-    var spreadSlope = beamLength/beamSpread
+    let spreadSlope = beamLength/beamSpread
     // x = ( (y2-m2*x2)-(y1-m1*x1) ) / (m1-m2)
-    var intersectionX =
+    let intersectionX =
         ( (curveEndY-spreadSlope*curveEndX) - (tangentY-slope*tangentX) ) / (slope - spreadSlope)
     // y = m(x-x1)+y1
-    var intersectionY = slope*(intersectionX-tangentX) + tangentY
+    let intersectionY = slope*(intersectionX-tangentX) + tangentY
     controlX = intersectionX
     controlY = intersectionY
   }
 
-  var path = []
+  let path = []
 
   path.push("M", -tangentX, tangentY)
   path.push("A", 9, 2, 0, 0, 0 , tangentX, tangentY)
@@ -57,7 +52,7 @@ const svgPath = computed(() => {
   path.push("Z")
 
   // const path1 = path.join(' ')
-  // var tag = "<path d=\"" + path.join(' ') + "\" fill=\"#fff\"></path>"
+  // let tag = "<path d=\"" + path.join(' ') + "\" fill=\"#fff\"></path>"
   // document.write(tag)
 
   tangentY *= -1
