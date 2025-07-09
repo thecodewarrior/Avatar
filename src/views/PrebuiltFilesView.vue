@@ -2,6 +2,8 @@
 
 import AlterAvatarLinks from "@/components/AlterAvatarLinks.vue";
 import ImagePreviewLink from "@/components/ImagePreviewLink.vue";
+import AlterHeadspaceMap from "@/components/AlterHeadspaceMap.vue";
+import {Alters} from "@/data/alters.ts";
 </script>
 
 <template>
@@ -15,15 +17,19 @@ import ImagePreviewLink from "@/components/ImagePreviewLink.vue";
     </div>
     <h3>Alters</h3>
     <div class="preview-grid">
-      <AlterAvatarLinks name="Kate" dir="kate" color-code="#000000"/>
-      <AlterAvatarLinks name="Ruby" dir="ruby" color-code="#BE2627"/>
-      <AlterAvatarLinks name="Jaden" dir="jaden" color-code="#03750F"/>
-      <AlterAvatarLinks name="Topaz" dir="topaz" color-code="#0A76B4"/>
-      <AlterAvatarLinks name="Sapphire" dir="sapphire" color-code="#0F20BB"/>
-      <AlterAvatarLinks name="Sixth Part" dir="sixth" color-code="#EB8C1F"/>
-      <AlterAvatarLinks name="Seventh Part" dir="seventh" color-code="#FF00FF"/>
-      <AlterAvatarLinks name="Eighth Part" dir="eighth" color-code="#F45DE8"/>
-      <AlterAvatarLinks name="Other" dir="other" color-code="#949494"/>
+      <AlterAvatarLinks :alter="Alters.KATE"/>
+      <AlterAvatarLinks :alter="Alters.RUBY"/>
+      <AlterAvatarLinks :alter="Alters.JADEN"/>
+      <AlterAvatarLinks :alter="Alters.TOPAZ"/>
+      <AlterAvatarLinks :alter="Alters.SAPPHIRE"/>
+      <AlterAvatarLinks :alter="Alters.SIXTH"/>
+      <AlterAvatarLinks :alter="Alters.SEVENTH"/>
+      <AlterAvatarLinks :alter="Alters.STELLA"/>
+      <AlterAvatarLinks :alter="Alters.OTHER"/>
+    </div>
+    <h3>Headspace</h3>
+    <div class="flex justify-center">
+      <AlterHeadspaceMap :headspace="Alters.HEADSPACE"/>
     </div>
     <h3>Plural</h3>
     <div class="preview-grid">

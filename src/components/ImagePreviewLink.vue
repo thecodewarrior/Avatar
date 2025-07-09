@@ -2,6 +2,8 @@
 const props = withDefaults(defineProps<{
   mainUrl: string;
   altUrls?: Record<string, string>,
+  altText?: string;
+  altClasses?: string;
   name?: string;
   width?: number;
   height?: number;
@@ -19,7 +21,7 @@ function resolveUrl(url: string): string {
 <template>
   <div class="flex flex-col items-center">
     <a :href="resolveUrl(mainUrl)" :class="{'rounded-full overflow-hidden': rounded}">
-      <img :src="resolveUrl(mainUrl)" :width="width" :height="height"/>
+      <img :class="altClasses" :src="resolveUrl(mainUrl)" :width="width" :height="height" :alt="props.altText"/>
     </a>
     <span v-if="name">{{name}}</span>
     <span v-for="(altUrl, altName) in altUrls" :key="altName">(<a :href="resolveUrl(altUrl)" class="underline">{{altName}}</a>)</span>
