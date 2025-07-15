@@ -12,6 +12,7 @@ export namespace Alters {
   export const SIXTH: AlterInfo = {id: "sixth", name: "Sixth Part", backgroundColor: "#EB8C1F"}
   export const SEVENTH: AlterInfo = {id: "seventh", name: "Seventh Part", backgroundColor: "#FF00FF"}
   export const STELLA: AlterInfo = {id: "stella", name: "Stella", backgroundColor: "#F45DE8"}
+  export const CONSTELLATION: AlterInfo = {id: "constellation", name: "Constellation", backgroundColor: "#49009C"}
   export const OTHER: AlterInfo = {id: "other", name: "Other", backgroundColor: "#949494"}
 
   export const HEADSPACE: (AlterInfo | null)[][] = [
