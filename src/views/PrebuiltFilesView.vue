@@ -26,6 +26,7 @@ import {Alters} from "@/data/alters.ts";
       <AlterAvatarLinks :alter="Alters.SEVENTH"/>
       <AlterAvatarLinks :alter="Alters.STELLA"/>
       <AlterAvatarLinks :alter="Alters.CONSTELLATION"/>
+      <AlterAvatarLinks :alter="Alters.IVY"/>
       <AlterAvatarLinks :alter="Alters.OTHER"/>
     </div>
     <h3>Headspace</h3>
