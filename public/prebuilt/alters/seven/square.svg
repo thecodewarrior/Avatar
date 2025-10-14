@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg id="main-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="500px" height="500px" viewBox="-85 -85 170 170" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <bx:export>
+      <bx:file format="png" width="500" height="500" path="square.png"/>
+    </bx:export>
+  </defs>
+  <rect x="-85" y="-85" width="170" height="170" style="pointer-events: none; fill: rgb(20, 154, 0); stroke-width: 0.239;"/>
+  <path style="fill: none; stroke: rgb(255, 255, 255); stroke-linecap: round; stroke-linejoin: round; transform-origin: -0.002px 0.003px; stroke-width: 25px;" d="M -25.342 44.284 L -54.906 0.002 L -25.342 -44.284 M -54.906 0.002 L 54.906 0.002 M 25.341 -44.284 L 54.906 0.002 L 25.341 44.284"/>
+</svg>

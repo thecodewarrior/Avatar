@@ -17,17 +17,7 @@ import {Alters} from "@/data/alters.ts";
     </div>
     <h3>Alters</h3>
     <div class="preview-grid">
-      <AlterAvatarLinks :alter="Alters.KATE"/>
-      <AlterAvatarLinks :alter="Alters.RUBY"/>
-      <AlterAvatarLinks :alter="Alters.JADEN"/>
-      <AlterAvatarLinks :alter="Alters.TOPAZ"/>
-      <AlterAvatarLinks :alter="Alters.SAPPHIRE"/>
-      <AlterAvatarLinks :alter="Alters.SIXTH"/>
-      <AlterAvatarLinks :alter="Alters.SEVENTH"/>
-      <AlterAvatarLinks :alter="Alters.STELLA"/>
-      <AlterAvatarLinks :alter="Alters.CONSTELLATION"/>
-      <AlterAvatarLinks :alter="Alters.IVY"/>
-      <AlterAvatarLinks :alter="Alters.OTHER"/>
+      <AlterAvatarLinks v-for="alter in Alters.ALL" :alter="alter" :key="alter.id"/>
     </div>
     <h3>Headspace</h3>
     <div class="flex justify-center">
