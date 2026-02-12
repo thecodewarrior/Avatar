@@ -2,7 +2,6 @@
 
 import AlterAvatarLinks from "@/components/AlterAvatarLinks.vue";
 import ImagePreviewLink from "@/components/ImagePreviewLink.vue";
-import AlterHeadspaceMap from "@/components/AlterHeadspaceMap.vue";
 import {Alters} from "@/data/alters.ts";
 </script>
 
@@ -18,10 +17,6 @@ import {Alters} from "@/data/alters.ts";
     <h3>Alters</h3>
     <div class="preview-grid">
       <AlterAvatarLinks v-for="alter in Alters.ALL" :alter="alter" :key="alter.id"/>
-    </div>
-    <h3>Headspace</h3>
-    <div class="flex justify-center">
-      <AlterHeadspaceMap :headspace="Alters.HEADSPACE"/>
     </div>
     <h3>Plural</h3>
     <div class="preview-grid">

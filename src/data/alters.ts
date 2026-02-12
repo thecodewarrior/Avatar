@@ -3,6 +3,7 @@ export type AlterInfo = {
   name: string;
   backgroundColor: string;
 }
+
 export namespace Alters {
   export const KATE: AlterInfo = {id: "kate", name: "Kate", backgroundColor: "#000000"}
   export const RUBY: AlterInfo = {id: "ruby", name: "Ruby", backgroundColor: "#BE2627"}
@@ -15,18 +16,12 @@ export namespace Alters {
   export const CONSTELLATION: AlterInfo = {id: "constellation", name: "Constellation", backgroundColor: "#49009C"}
   export const IVY: AlterInfo = {id: "ivy", name: "Ivy", backgroundColor: "#01A00A"}
   export const THORNE: AlterInfo = {id: "thorne", name: "Thorne", backgroundColor: "#011793"}
+  export const SELEE: AlterInfo = {id: "selee", name: "Selee", backgroundColor: "#28089b"}
   export const OTHER: AlterInfo = {id: "other", name: "Other", backgroundColor: "#949494"}
 
   export const ALL: AlterInfo[] = [
     KATE, RUBY, JADEN, TOPAZ, SAPPHIRE,
-    SIXTH, SEVEN, STELLA, CONSTELLATION, IVY, THORNE,
+    SIXTH, SEVEN, STELLA, CONSTELLATION, IVY, THORNE, SELEE,
     OTHER,
-  ]
-
-  export const HEADSPACE: (AlterInfo | null)[][] = [
-      [null, STELLA, SEVEN],
-      [KATE, RUBY, null],
-      [JADEN, null, SIXTH],
-      [TOPAZ, SAPPHIRE, null]
   ]
 }
