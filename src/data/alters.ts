@@ -6,7 +6,7 @@ export type AlterInfo = {
 
 export namespace Alters {
   export const KATE: AlterInfo = {id: "kate", name: "Kate", backgroundColor: "#000000"}
-  export const KAYLYN: AlterInfo = {id: "kaylyn", name: "Kaylyn", backgroundColor: "#3666ff"}
+  export const KAYLIN: AlterInfo = {id: "kaylin", name: "Kaylin", backgroundColor: "#3666ff"}
   export const RUBY: AlterInfo = {id: "ruby", name: "Ruby", backgroundColor: "#BE2627"}
   export const JADEN: AlterInfo = {id: "jaden", name: "Jaden", backgroundColor: "#03750F"}
   export const TOPAZ: AlterInfo = {id: "topaz", name: "Topaz", backgroundColor: "#0A76B4"}
@@ -21,7 +21,7 @@ export namespace Alters {
   export const OTHER: AlterInfo = {id: "other", name: "Other", backgroundColor: "#949494"}
 
   export const ALL: AlterInfo[] = [
-    KATE, KAYLYN, RUBY, JADEN, TOPAZ, SAPPHIRE,
+    KATE, KAYLIN, RUBY, JADEN, TOPAZ, SAPPHIRE,
     SIXTH, SEVEN, STELLA, CONSTELLATION, IVY, THORNE, SELEE,
     OTHER,
   ]

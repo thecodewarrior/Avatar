@@ -162,7 +162,7 @@
     <path style="fill: none; stroke: rgb(255, 255, 255); stroke-linecap: round; stroke-linejoin: round; stroke-width: 99.5835px; transform-origin: 37.628px 5.888px;" d="M -62.901 181.561 L -180.19 5.885 L -62.901 -169.81 M -180.19 5.885 L 255.462 5.885 M 138.171 -169.81 L 255.462 5.885 L 138.171 181.561"/>
   </g>
   <g style="" transform="matrix(0.281171, 0, 0, 0.281171, -10.58201, -1.653287)">
-    <title>Kaylyn</title>
+    <title>Kaylin</title>
     <rect x="-318.02" y="-349.78" width="711.311" height="711.311" style="fill: url(&quot;#gradient-7&quot;);"/>
     <path style="fill: none; stroke: rgb(255, 255, 255); stroke-linecap: round; stroke-linejoin: round; stroke-width: 99.584;" d="M -61.763 -143.84 L -177.72 5.887 L -61.763 155.6 L 137.033 -143.84 L 252.995 5.887 L 137.033 155.6"/>
   </g>
@@ -300,8 +300,8 @@
       <use width="70" height="70" transform="matrix(1, 0, 0, 1, -55.70000076293945, -1.7999999523162842)" href="#gear"/>
     </g>
     <g transform="matrix(-0.308937, 0.951082, -0.951082, -0.308937, -28.82473, -51.448921)" style="mix-blend-mode: difference; transform-origin: 43.8803px 70.397px; visibility: hidden;">
-      <use width="70" height="70" transform="matrix(0.9397232532501221, -0.341942697763443, 0.341942697763443, 0.9397232532501221, -29.212186813354492, 37.36521911621094)" href="#gear"/>
-      <use width="70" height="70" transform="matrix(0.9397232532501221, -0.341942697763443, 0.341942697763443, 0.9397232532501221, 28.12080192565918, 63.325557708740234)" href="#gear"/>
+      <use width="70" height="70" transform="matrix(0.9397233128547668, -0.3419426679611206, 0.3419426679611206, 0.9397233128547668, -29.212186813354492, 37.36521911621094)" href="#gear"/>
+      <use width="70" height="70" transform="matrix(0.9397233128547668, -0.3419426679611206, 0.3419426679611206, 0.9397233128547668, 28.12080192565918, 63.325557708740234)" href="#gear"/>
     </g>
   </g>
   <g style="visibility: hidden;" id="ruby">
