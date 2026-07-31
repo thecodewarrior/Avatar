@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg id="main-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="500px" height="500px" viewBox="-80 -80 160 160" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <clipPath id="clip-0">
+      <path stroke-width="4.04" d="M 0 75.79 C 33.21 75.79 51.672 75.79 63.731 63.732 C 75.789 51.674 75.789 33.212 75.789 0.001 C 75.789 -33.209 75.789 -51.671 63.731 -63.731 C 51.672 -75.791 33.21 -75.791 0 -75.791 C -33.211 -75.791 -51.673 -75.791 -63.731 -63.731 C -75.789 -51.671 -75.789 -33.209 -75.789 0.001 C -75.789 33.212 -75.789 51.674 -63.731 63.732 C -51.673 75.79 -33.211 75.79 0 75.79 Z" style="fill: rgb(255, 255, 255); stroke-width: 3.802;"/>
+    </clipPath>
+    <bx:export>
+      <bx:file format="png" path="squircle.png" width="500" height="500"/>
+    </bx:export>
+  </defs>
+  <rect id="background" x="-80" y="-80" width="160" height="160" fill="#000" style="clip-path: url(&quot;#clip-0&quot;);"/>
+  <g id="main-avatar" transform="matrix(0.62654, -0.62654, 0.62654, 0.62654, 0, 0)" style="">
+    <circle id="halo" cx="0" cy="0" r="40" fill="#FFF"/>
+    <circle id="event-horizon-back" cx="0" cy="0" r="30" fill="#000"/>
+    <ellipse id="accretion-disk" cx="0" cy="0" rx="90" ry="20" fill="#FFF"/>
+    <path id="event-horizon-front" d="M-30,0 A1,1 0 0,1 30,0 A9,2 0 0,1 -30,0" fill="#000"/>
+  </g>
+</svg>

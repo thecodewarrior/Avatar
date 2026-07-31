@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg id="main-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="500px" height="500px" viewBox="-85 -85 170 170" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <clipPath id="clip-0">
+      <path stroke-width="4.04" d="M 0 80.526 C 35.286 80.526 54.902 80.526 67.714 67.714 C 80.526 54.902 80.526 35.287 80.526 0.001 C 80.526 -35.285 80.526 -54.901 67.714 -67.717 C 54.902 -80.527 35.286 -80.527 0 -80.527 C -35.286 -80.527 -54.902 -80.527 -67.714 -67.717 C -80.526 -54.901 -80.526 -35.285 -80.526 0.001 C -80.526 35.287 -80.526 54.902 -67.714 67.714 C -54.902 80.526 -35.286 80.526 0 80.526 Z" style="fill: rgb(255, 255, 255); stroke-width: 4.04;"/>
+    </clipPath>
+    <bx:export>
+      <bx:file format="png" path="squircle.png" width="500" height="500"/>
+    </bx:export>
+  </defs>
+  <rect id="background" x="-85" y="-85" width="170" height="170" fill="#BE2627" style="clip-path: url(&quot;#clip-0&quot;);"/>
+  <g style="" transform="matrix(0.92582, 0, 0, 0.92582, 0, 0)">
+    <path id="star" d="M 0,-75 L 13,-13 75,0 13,13 0,75 -13,13 -75,0 -13,-13 Z" fill="#FFF"/>
+    <rect id="corners" x="-20" y="-20" width="40" height="40" fill="#FFF" transform="matrix(0.707107, -0.707107, 0.707107, 0.707107, 0, 0)"/>
+  </g>
+</svg>

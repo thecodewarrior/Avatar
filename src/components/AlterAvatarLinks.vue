@@ -31,6 +31,13 @@ function prebuiltUrl(name: string): string {
           alt-classes="flex text-center items-center justify-center bg-[#949494]"
           :width="100" :height="100"
       />
+      <ImagePreviewLink
+          :main-url="prebuiltUrl('squircle.png')"
+          :alt-urls="{'SVG': prebuiltUrl('squircle.svg')}"
+          :alt-text="alter.name"
+          alt-classes="flex text-center items-center justify-center bg-[#949494]"
+          :width="100" :height="100"
+      />
     </div>
     <div class="mt-2 px-2 py-0.5 rounded text-white font-black" :style="{'background-color': alter.backgroundColor}">
       Color: {{alter.backgroundColor}}
