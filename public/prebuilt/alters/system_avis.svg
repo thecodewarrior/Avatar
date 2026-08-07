@@ -96,7 +96,7 @@
     </linearGradient>
     <linearGradient gradientUnits="userSpaceOnUse" x1="37.635" y1="-349.78" x2="37.635" y2="361.531" id="gradient-8" gradientTransform="matrix(1, 0, 0, 1, -0.152954, 0.005501)">
       <stop offset="0" style="stop-color: rgb(242, 83, 227);"/>
-      <stop offset="1" style="stop-color: rgb(175, 17, 169);"/>
+      <stop offset="1" style="stop-color: rgb(189, 26, 182);"/>
     </linearGradient>
   </defs>
   <g style="visibility: hidden;">
@@ -328,7 +328,7 @@
   <path d="M -820.3007 -771.4358 L 817.5746 -771.4358 L 817.5746 768.531 L -820.3007 768.531 L -820.3007 -771.4358 Z M 0 -100 C -55.2285 -100 -100 -55.2285 -100 0 C -100 55.2285 -55.2285 100 0 100 C 55.2285 100 100 55.2285 100 0 C 100 -55.2285 55.2285 -100 0 -100 Z" style="fill: rgb(28, 29, 35); pointer-events: none;">
     <title>context</title>
   </path>
-  <path d="M -820.29 -771.44 L 817.575 -771.44 L 817.575 768.532 L -820.29 768.532 L -820.29 -771.44 Z M 0.002 -100 C -55.226 -100 -100 -55.233 -100 -0.004 C -100 55.224 -55.226 99.996 0.002 99.996 C 55.231 99.996 100.002 55.224 100.002 -0.004 C 100.002 -55.233 55.231 -100 0.002 -100 Z" style="stroke-width: 1; fill: rgb(57, 58, 65); pointer-events: none; visibility: hidden;">
+  <path d="M -820.29 -771.44 L 817.575 -771.44 L 817.575 768.532 L -820.29 768.532 L -820.29 -771.44 Z M 0.002 -100 C -55.226 -100 -100 -55.233 -100 -0.004 C -100 55.224 -55.226 99.996 0.002 99.996 C 55.231 99.996 100.002 55.224 100.002 -0.004 C 100.002 -55.233 55.231 -100 0.002 -100 Z" style="stroke-width: 1; fill: rgb(57, 58, 65); pointer-events: none;">
     <title>context</title>
   </path>
   <g transform="matrix(1, 0, 0, 1, -82.474731, 36.95163)"/>
