@@ -14,7 +14,8 @@
   </defs>
   <g style="clip-path: url(&quot;#clip-0&quot;);">
     <rect id="background" x="-88" y="-88" width="180" height="180" fill="#03750F"/>
-    <g style="transform-origin: 6.8415px -4.766px;" transform="matrix(0.939693, -0.34202, 0.34202, 0.939693, -0.999999, -1)">
+    <g style="transform-origin: 6.8415px -4.766px;" transform="matrix(0.878294, -0.319673, 0.319673, 0.878294, -1.251002, -0.492569)">
+      <rect id="rect-1" x="-88" y="-88" width="180" height="180" fill="#03750F" style="stroke-width: 1; visibility: hidden;" transform="matrix(0.939693, 0.34202, -0.34202, 0.939693, -0.6198, -1.345642)"/>
       <use width="70" height="70" href="#gear" transform="matrix(1, 0, 0, 1, -45, -75)"/>
       <use width="70" height="70" href="#gear" transform="matrix(1, 0, 0, 1, 0, -31)"/>
       <use width="70" height="70" href="#gear" transform="matrix(1, 0, 0, 1, -55.70000076293945, -1.7999999523162842)"/>
