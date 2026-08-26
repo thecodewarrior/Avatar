@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg id="main-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="500px" height="500px" viewBox="-85 -85 170 170" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <bx:export>
+      <bx:file format="png" path="squircle.png" width="500" height="500"/>
+    </bx:export>
+    <clipPath id="clip-0">
+      <path stroke-width="4.04" d="M 0 80.525 C 35.286 80.525 54.902 80.525 67.714 67.713 C 80.526 54.901 80.526 35.285 80.526 -0.001 C 80.526 -35.287 80.526 -54.905 67.714 -67.715 C 54.902 -80.525 35.286 -80.525 0 -80.525 C -35.286 -80.525 -54.902 -80.525 -67.714 -67.715 C -80.526 -54.905 -80.526 -35.287 -80.526 -0.001 C -80.526 35.285 -80.526 54.901 -67.714 67.713 C -54.902 80.525 -35.286 80.525 0 80.525 Z" style="fill: rgb(255, 255, 255); stroke-width: 4.04;"/>
+    </clipPath>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="37.635" y1="-349.78" x2="37.635" y2="361.531" id="gradient-10" gradientTransform="matrix(0.238995, 0, 0, 0.238995, -8.995203, -1.407249)">
+      <stop offset="0" style="stop-color: oklch(0.896 0.286 102);"/>
+      <stop offset="1" style="stop-color: oklch(0.661 0.367 102);"/>
+    </linearGradient>
+  </defs>
+  <g style="clip-path: url(&quot;#clip-0&quot;);">
+    <rect x="-85" y="-85" width="170" height="170" style="fill: url(&quot;#gradient-10&quot;); stroke-width: 0.85;"/>
+    <path style="fill: none; stroke-linejoin: round; stroke-width: 3.995; stroke: rgb(255, 255, 255); stroke-linecap: round;" d="M 15.369 -61.881 L -15.388 -61.846 L -62.952 35.737 L -48.842 58.777 L 48.79 58.771 L 62.952 35.733 L 15.369 -61.881 Z M -15.41 -61.881 L -0.02 -46.875 L 41.478 40.916 L 48.202 57.367 M 15.369 -61.881 L -0.02 -46.846 L -41.564 40.926 L -44.151 47.379 M -61.626 36.175 L -41.564 40.926 L 41.52 40.926 L 51.596 38.541 M -10.631 23.155 L 10.723 1.691 M 2.305 28.67 L 10.782 20.15 M -8.118 2.305 L 2.74 -8.607"/>
+  </g>
+</svg>
