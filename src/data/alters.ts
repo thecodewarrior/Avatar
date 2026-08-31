@@ -20,11 +20,12 @@ export namespace Alters {
   export const THORNE: AlterInfo = {id: "thorne", name: "Thorne", backgroundColor: "#011793"}
   export const SELEE: AlterInfo = {id: "selee", name: "Selee", backgroundColor: "#28089b"}
   export const AMBER: AlterInfo = {id: "amber", name: "Amber", backgroundColor: "#c58900"}
+  export const RIPPLE: AlterInfo = {id: "ripple", name: "Ripple", backgroundColor: "#0076fb"}
   export const OTHER: AlterInfo = {id: "other", name: "Other", backgroundColor: "#949494"}
 
   export const ALL: AlterInfo[] = [
     KATE, KAYLIN, CLOVER, RUBY, JADEN, TOPAZ, SAPPHIRE,
     SIXTH, SEVEN, STELLA, CONSTELLATION, IVY, THORNE, 
-    SELEE, AMBER, OTHER,
+    SELEE, AMBER, RIPPLE, OTHER,
   ]
 }
