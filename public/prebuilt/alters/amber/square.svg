@@ -4,11 +4,16 @@
     <bx:export>
       <bx:file format="png" path="square.png" width="500" height="500"/>
     </bx:export>
-    <linearGradient gradientUnits="userSpaceOnUse" x1="37.635" y1="-349.78" x2="37.635" y2="361.531" id="gradient-10" gradientTransform="matrix(0.238995, 0, 0, 0.238995, -8.991585, -1.405926)">
+    <linearGradient gradientUnits="userSpaceOnUse" x1="37.635" y1="-349.78" x2="37.635" y2="361.531" id="gradient-1" gradientTransform="matrix(0.238995, 0, 0, 0.238995, -8.994675, -1.401516)">
       <stop offset="0" style="stop-color: oklch(0.896 0.286 102);"/>
       <stop offset="1" style="stop-color: oklch(0.661 0.367 102);"/>
     </linearGradient>
   </defs>
-  <rect x="-85" y="-85" width="170" height="170" style="fill: url(&quot;#gradient-10&quot;); stroke-width: 0.85;"/>
-  <path style="fill: none; stroke-linejoin: round; stroke-width: 3.995; stroke: rgb(255, 255, 255); stroke-linecap: round;" d="M 15.736 -61.429 L -15.71 -61.391 L -64.344 38.383 L -49.915 61.94 L 49.908 61.933 L 64.389 38.38 L 15.736 -61.429 Z M -15.733 -61.429 L 0.001 -46.086 L 42.431 43.677 L 49.306 60.497 M 15.736 -61.429 L 0.001 -46.056 L -42.474 43.688 L -45.118 50.286 M -62.988 38.83 L -42.474 43.688 L 42.475 43.688 L 52.778 41.251 M -10.846 25.517 L 10.987 3.571 M 2.379 31.156 L 11.046 22.445 M -8.278 4.2 L 2.823 -6.957"/>
+  <rect x="-85" y="-85" width="170" height="170" style="fill: url(&quot;#gradient-1&quot;); stroke-width: 0.85;"/>
+  <g style="" transform="matrix(1.088378, 0, 0, 1.088378, 0.418934, 0.915241)">
+    <path style="fill: rgba(255, 255, 255, 0.773); stroke-width: 0.85;" d="M -11.391 -60.687 L -23.548 -9.616 L 47.605 42.324 L 61.155 15.95 C 61.155 15.95 47.837 -48.732 47.837 -48.751 C 47.837 -48.771 -11.568 -61.014 -11.391 -60.687 Z"/>
+    <path style="fill: rgba(255, 255, 255, 0.475); stroke-width: 0.85;" d="M -10.782 -61.042 L -43.71 -28.651 L -55.433 29.559 L -23.312 -10.075 C -23.312 -10.075 -10.571 -60.462 -10.782 -61.042 Z"/>
+    <path style="fill: rgba(255, 255, 255, 0.392); stroke-width: 0.85;" d="M 47.319 41.832 L -23.765 -10.224 L -55.299 29.484 L -23.098 55.161 L 29.31 55.246 L 47.319 41.832 Z"/>
+    <path d="M 49.092 -50.199 L -11.249 -63.635 L -44.649 -30.149 L -57.941 29.831 L -24.243 56.857 L 28.703 56.857 L 48.953 43.325 L 62.374 16.414 M 58.622 15.912 L 46.905 39.408 L -21.588 -10.506 L -9.364 -59.547 L 46.037 -47.213 M -41.383 -28.36 L -13.981 -55.832 L -25.294 -10.434 L -53.153 24.76 L -41.383 -28.36 Z M 27.618 53.28 L -22.985 53.28 L -52.854 29.325 L -23.644 -7.577 L 44.437 42.038 L 27.618 53.28 Z" style="stroke-width: 0.85;"/>
+  </g>
 </svg>
