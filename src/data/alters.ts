@@ -7,7 +7,7 @@ export type AlterInfo = {
 export namespace Alters {
   export const KATE: AlterInfo = {id: "kate", name: "Kate", backgroundColor: "#000000"}
   export const KAYLIN: AlterInfo = {id: "kaylin", name: "Kaylin", backgroundColor: "#3666ff"}
-  export const CLOVER: AlterInfo = {id: "clover", name: "Clover", backgroundColor: "#24ccec"}
+  export const CLOVER: AlterInfo = {id: "clover", name: "Clover", backgroundColor: "#00ab00"}
   export const RUBY: AlterInfo = {id: "ruby", name: "Ruby", backgroundColor: "#BE2627"}
   export const JADEN: AlterInfo = {id: "jaden", name: "Jaden", backgroundColor: "#03750F"}
   export const TOPAZ: AlterInfo = {id: "topaz", name: "Topaz", backgroundColor: "#0A76B4"}
