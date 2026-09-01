@@ -11,9 +11,13 @@
     <bx:export>
       <bx:file format="png" path="squircle.png" width="500" height="500"/>
     </bx:export>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="0" y1="-100" x2="0" y2="100" id="gradient-18" gradientTransform="matrix(0.9, 0, 0, 0.9, 1.999618, 2.002831)">
+      <stop offset="0" style="stop-color: oklch(0.534 0.177 143);"/>
+      <stop offset="1" style="stop-color: oklch(0.447 0.16 144);"/>
+    </linearGradient>
   </defs>
   <g style="clip-path: url(&quot;#clip-0&quot;);">
-    <rect id="background" x="-88" y="-88" width="180" height="180" fill="#03750F"/>
+    <rect x="-88" y="-88" width="180" height="180" style="fill: url(&quot;#gradient-18&quot;); stroke-width: 1;"/>
     <g style="transform-origin: 6.8415px -4.766px;" transform="matrix(0.878294, -0.319673, 0.319673, 0.878294, -1.251002, -0.492569)">
       <rect id="rect-1" x="-88" y="-88" width="180" height="180" fill="#03750F" style="stroke-width: 1; visibility: hidden;" transform="matrix(0.939693, 0.34202, -0.34202, 0.939693, -0.6198, -1.345642)"/>
       <use width="70" height="70" href="#gear" transform="matrix(1, 0, 0, 1, -45, -75)"/>
