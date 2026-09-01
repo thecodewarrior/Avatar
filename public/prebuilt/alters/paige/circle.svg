@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg id="main-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="500px" height="500px" viewBox="-100 -100 200 200" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <bx:export>
+      <bx:file format="png" path="circle.png" width="500" height="500"/>
+    </bx:export>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="37.635" y1="-349.78" x2="37.635" y2="361.531" id="gradient-15" gradientTransform="matrix(0.281171, 0, 0, 0.281171, 71.892715, -38.603649)">
+      <stop offset="0" style="stop-color: oklch(0.761 0.301 221);"/>
+      <stop offset="1" style="stop-color: oklch(0.479 0.239 214);"/>
+    </linearGradient>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, -82.474998, 36.949997)" style="">
+    <title>Paige</title>
+    <rect x="-17.525" y="-136.95" width="200" height="200" style="fill: url(&quot;#gradient-15&quot;);"/>
+    <path style="opacity: 1; fill-opacity: 1; fill-rule: nonzero; stroke: none; stroke-width: 0.732586; stroke-linecap: square; stroke-linejoin: miter; stroke-miterlimit: 4; stroke-dasharray: none; stroke-dashoffset: 0; stroke-opacity: 1; fill: rgb(255, 255, 255);" d="M 82.475 -114.34 C 75.73 -59.289 77.719 -43.083 30.614 -36.95 C 76.919 -29.432 77.585 -12.477 82.475 40.445 C 88.916 -12.786 87.662 -28.732 134.336 -36.95 C 87.297 -42.991 88.881 -59.354 82.475 -114.34 Z"/>
+  </g>
+</svg>
