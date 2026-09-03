@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg id="main-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="500px" height="500px" viewBox="-85 -85 170 170" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <bx:export>
+      <bx:file format="png" width="500" height="500" path="square.png"/>
+    </bx:export>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="0" y1="-100" x2="0" y2="100" id="gradient-21" gradientTransform="matrix(0.85, 0, 0, 0.85, -0.00059, -0.000499)">
+      <stop offset="0" style="stop-color: oklch(0.619 0.238 143);"/>
+      <stop offset="1" style="stop-color: oklch(0.417 0.16 144);"/>
+    </linearGradient>
+  </defs>
+  <rect x="-85" y="-85" width="170" height="170" style="fill: url(&quot;#gradient-21&quot;); stroke-width: 1;"/>
+  <path d="M 36.322 33.741 C 40.461 20.088 37.912 7.582 29.518 -5.187 C 20.503 -18.945 4.112 -24.032 -6.718 -35.561 C -17.211 -46.735 -14.013 -66.534 -5.294 -72.481 C -17.976 -68.517 -30.231 -48.009 -21.942 -24.522 C -17.466 -11.854 -6.372 -4.629 2.503 6.706 C 10.348 16.709 16.816 27.153 16.481 39.781 C 16.162 51.98 9.612 64.39 2.585 74.08 C 8.971 69.012 13.499 66.075 18.887 60.694 C 25.219 54.345 32.36 46.818 36.322 33.741 Z M 10.168 48.398 C 11.132 38.75 5.004 29.702 -2.663 23.503 C -7.991 19.194 -15.467 16.093 -18.192 9.334 C -20.924 2.544 -18.378 -5.494 -15.197 -9.853 C -19.168 -7.478 -22.198 -3.345 -24.103 2.152 C -28.609 15.096 -21.544 25.021 -10.444 35.729 C -5.882 40.125 -2.191 43.335 -0.053 49.525 C 3.995 58.285 -0.14 67.429 -3.309 75.362 C 5.399 66.68 8.968 60.293 10.168 48.398 Z" style="fill: rgb(255, 255, 255); stroke-width: 0.281;"/>
+</svg>

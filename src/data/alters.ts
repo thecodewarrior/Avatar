@@ -13,7 +13,7 @@ export namespace Alters {
   export const TOPAZ: AlterInfo = {id: "topaz", name: "Topaz", backgroundColor: "#0A76B4"}
   export const SAPPHIRE: AlterInfo = {id: "sapphire", name: "Sapphire", backgroundColor: "#0F20BB"}
   export const SIXTH: AlterInfo = {id: "sixth", name: "Sixth Part", backgroundColor: "#EB8C1F"}
-  export const SEVEN: AlterInfo = {id: "seven", name: "Seven", backgroundColor: "#149a00"}
+  export const AIDEN: AlterInfo = {id: "aiden", name: "Aiden", backgroundColor: "#009900"}
   export const STELLA: AlterInfo = {id: "stella", name: "Stella", backgroundColor: "#F45DE8"}
   export const CONSTELLATION: AlterInfo = {id: "constellation", name: "Constellation", backgroundColor: "#49009C"}
   export const IVY: AlterInfo = {id: "ivy", name: "Ivy", backgroundColor: "#01A00A"}
@@ -31,7 +31,7 @@ export namespace Alters {
 
   export const ALL: AlterInfo[] = [
     KATE, KAYLIN, CLOVER, RUBY, JADEN, TOPAZ, SAPPHIRE,
-    SIXTH, SEVEN, STELLA, CONSTELLATION, IVY, THORNE, 
+    SIXTH, AIDEN, STELLA, CONSTELLATION, IVY, THORNE, 
     SELEE, AMBER, RIPPLE, JUNE, JAMIE, PAIGE, ELLIE, 
     IRIS, PETAL, OTHER,
   ]
