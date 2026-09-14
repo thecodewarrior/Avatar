@@ -5,36 +5,31 @@ export type AlterInfo = {
 }
 
 export namespace Alters {
-  export const KATE: AlterInfo = {id: "kate", name: "Kate", backgroundColor: "#000000"}
-  export const KAYLIN: AlterInfo = {id: "kaylin", name: "Kaylin", backgroundColor: "#3666ff"}
-  export const CLOVER: AlterInfo = {id: "clover", name: "Clover", backgroundColor: "#00ab00"}
-  export const RUBY: AlterInfo = {id: "ruby", name: "Ruby", backgroundColor: "#BE2627"}
-  export const JADEN: AlterInfo = {id: "jaden", name: "Jaden", backgroundColor: "#03750F"}
-  export const TOPAZ: AlterInfo = {id: "topaz", name: "Topaz", backgroundColor: "#0A76B4"}
-  export const SAPPHIRE: AlterInfo = {id: "sapphire", name: "Sapphire", backgroundColor: "#0F20BB"}
-  export const HALEY: AlterInfo = {id: "haley", name: "Haley", backgroundColor: "#ce4b00"}
-  export const AIDEN: AlterInfo = {id: "aiden", name: "Aiden", backgroundColor: "#009900"}
-  export const STELLA: AlterInfo = {id: "stella", name: "Stella", backgroundColor: "#F45DE8"}
-  export const CONSTELLATION: AlterInfo = {id: "constellation", name: "Constellation", backgroundColor: "#49009C"}
-  export const IVY: AlterInfo = {id: "ivy", name: "Ivy", backgroundColor: "#01A00A"}
-  export const THORNE: AlterInfo = {id: "thorne", name: "Thorne", backgroundColor: "#011793"}
-  export const SELEE: AlterInfo = {id: "selee", name: "Selee", backgroundColor: "#28089b"}
-  export const AMBER: AlterInfo = {id: "amber", name: "Amber", backgroundColor: "#c58900"}
-  export const RIPPLE: AlterInfo = {id: "ripple", name: "Ripple", backgroundColor: "#0076fb"}
-  export const JUNE: AlterInfo = {id: "june", name: "June", backgroundColor: "#ff4fb0"}
-  export const JAMIE: AlterInfo = {id: "jamie", name: "Jamie", backgroundColor: "#00b964"}
-  export const PAIGE: AlterInfo = {id: "paige", name: "Paige", backgroundColor: "#009fef"}
-  export const ELLIE: AlterInfo = {id: "ellie", name: "Ellie", backgroundColor: "#6f39ff"}
-  export const IRIS: AlterInfo = {id: "iris", name: "Iris", backgroundColor: "#0070ff"}
-  export const PETAL: AlterInfo = {id: "petal", name: "Petal", backgroundColor: "#9e67ff"}
-  export const NAO: AlterInfo = {id: "nao", name: "Nao", backgroundColor: "#7b05ff"}
-  export const ABIGAIL: AlterInfo = {id: "abigail", name: "Abigail", backgroundColor: "#f13e00"}
-  export const OTHER: AlterInfo = {id: "other", name: "Other", backgroundColor: "#949494"}
-
   export const ALL: AlterInfo[] = [
-    KATE, KAYLIN, CLOVER, RUBY, JADEN, TOPAZ, SAPPHIRE,
-    HALEY, AIDEN, STELLA, CONSTELLATION, IVY, THORNE, 
-    SELEE, AMBER, RIPPLE, JUNE, JAMIE, PAIGE, ELLIE, 
-    IRIS, PETAL, NAO, ABIGAIL, OTHER,
+    {id: "kate", name: "Kate", backgroundColor: "#000000"},
+    {id: "kaylin", name: "Kaylin", backgroundColor: "#3666ff"},
+    {id: "clover", name: "Clover", backgroundColor: "#00ab00"},
+    {id: "ruby", name: "Ruby", backgroundColor: "#BE2627"},
+    {id: "jaden", name: "Jaden", backgroundColor: "#03750F"},
+    {id: "topaz", name: "Topaz", backgroundColor: "#0A76B4"},
+    {id: "sapphire", name: "Sapphire", backgroundColor: "#0F20BB"},
+    {id: "haley", name: "Haley", backgroundColor: "#ce4b00"},
+    {id: "aiden", name: "Aiden", backgroundColor: "#009900"},
+    {id: "stella", name: "Stella", backgroundColor: "#F45DE8"},
+    {id: "constellation", name: "Constellation", backgroundColor: "#49009C"},
+    {id: "ivy", name: "Ivy", backgroundColor: "#01A00A"},
+    {id: "thorne", name: "Thorne", backgroundColor: "#011793"},
+    {id: "selee", name: "Selee", backgroundColor: "#28089b"},
+    {id: "amber", name: "Amber", backgroundColor: "#c58900"},
+    {id: "ripple", name: "Ripple", backgroundColor: "#0076fb"},
+    {id: "june", name: "June", backgroundColor: "#ff4fb0"},
+    {id: "jamie", name: "Jamie", backgroundColor: "#00b964"},
+    {id: "paige", name: "Paige", backgroundColor: "#009fef"},
+    {id: "ellie", name: "Ellie", backgroundColor: "#6f39ff"},
+    {id: "iris", name: "Iris", backgroundColor: "#0070ff"},
+    {id: "petal", name: "Petal", backgroundColor: "#9e67ff"},
+    {id: "nao", name: "Nao", backgroundColor: "#7b05ff"},
+    {id: "abigail", name: "Abigail", backgroundColor: "#f13e00"},
+    {id: "other", name: "Other", backgroundColor: "#949494"},
   ]
 }
