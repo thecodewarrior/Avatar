@@ -13,6 +13,22 @@ import {Alters} from "@/data/alters.ts";
       <ImagePreviewLink main-url="/prebuilt/square.png" :alt-urls="{'SVG': '/prebuilt/square.svg', 'MOV': '/prebuilt/square.mov'}" name="square" :width="100"/>
       <ImagePreviewLink main-url="/prebuilt/banner.png" :alt-urls="{'MOV': '/prebuilt/banner.mov'}" name="banner" :width="300"/>
       <ImagePreviewLink main-url="/prebuilt/full.png" :alt-urls="{'SVG': '/prebuilt/full.svg', 'MOV': '/prebuilt/full.mov'}" name="full" :width="100"/>
+      <ImagePreviewLink main-url="/prebuilt/alters/shimmer/banner/banner_16-9.png"
+                        :alt-urls="{'SVG': '/prebuilt/alters/shimmer/banner/banner_16-9.svg'}"
+                        name="Shimmer banner (16:9)"
+                        :width="300"/>
+      <ImagePreviewLink main-url="/prebuilt/alters/shimmer/banner/banner_4-3.png"
+                        :alt-urls="{'SVG': '/prebuilt/alters/shimmer/banner/banner_4-3.svg'}"
+                        name="Shimmer banner (4:3)"
+                        :width="300"/>
+      <ImagePreviewLink main-url="/prebuilt/alters/shimmer/banner/banner_2-1.png"
+                        :alt-urls="{'SVG': '/prebuilt/alters/shimmer/banner/banner_2-1.svg'}"
+                        name="Shimmer banner (2:1)"
+                        :width="300"/>
+      <ImagePreviewLink main-url="/prebuilt/alters/shimmer/banner/banner_3-1.png"
+                        :alt-urls="{'SVG': '/prebuilt/alters/shimmer/banner/banner_3-1.svg'}"
+                        name="Shimmer banner (3:1)"
+                        :width="300"/>
     </div>
     <h3>Alters</h3>
     <div class="preview-grid">
