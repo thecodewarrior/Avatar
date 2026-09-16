@@ -6,6 +6,7 @@ export type AlterInfo = {
 
 export namespace Alters {
   export const ALL: AlterInfo[] = [
+    {id: "shimmer", name: "Shimmer", backgroundColor: "#000000"},
     {id: "kate", name: "Kate", backgroundColor: "#000000"},
     {id: "kaylin", name: "Kaylin", backgroundColor: "#3666ff"},
     {id: "clover", name: "Clover", backgroundColor: "#00ab00"},
