@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg id="main-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="500px" height="500px" viewBox="-85 -85 170 170">
-  <rect id="background" x="-85" y="-85" width="170" height="170" fill="#949494"/>
-  <path id="diamond" d="M 4.859 -47.626 L 67.309 -7.576 C 69.889 -5.92 71.45 -3.066 71.45 0.001 C 71.45 3.066 69.889 5.92 67.309 7.576 L 4.859 47.626 C 1.899 49.524 -1.897 49.524 -4.858 47.626 L -67.308 7.576 C -69.889 5.92 -71.45 3.066 -71.45 0.001 C -71.45 -3.066 -69.889 -5.92 -67.308 -7.576 L -4.858 -47.626 C -1.897 -49.524 1.899 -49.524 4.859 -47.626 Z M -44.879 -2.844 C -47.84 -0.949 -47.84 0.949 -44.879 2.847 L -4.439 28.776 C -1.478 30.674 1.48 30.674 4.44 28.776 L 44.881 2.847 C 47.839 0.949 47.839 -0.949 44.881 -2.844 L 4.44 -28.777 C 1.48 -30.674 -1.478 -30.674 -4.439 -28.777 L -44.879 -2.844 Z" fill="#FFF"/>
+<svg id="main-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="500px" height="500px" viewBox="-85 -85 170 170" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <bx:export>
+      <bx:file format="png" path="square.png" width="500" height="500"/>
+    </bx:export>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="37.635" y1="-349.78" x2="37.635" y2="361.531" id="gradient-12" gradientTransform="matrix(0.238995, 0, 0, 0.238995, -8.994226, -1.405979)">
+      <stop offset="0" style="stop-color: oklch(0.687 0 0);"/>
+      <stop offset="1" style="stop-color: oklch(0.492 0 0);"/>
+    </linearGradient>
+  </defs>
+  <rect x="-85" y="-85" width="170" height="170" style="fill: url(&quot;#gradient-12&quot;); stroke-width: 0.239;"/>
+  <path d="M -54.053 -34.866 L 0 -3.661 L 54.052 -34.866 L 0 -66.068 L -54.053 -34.866 Z M -4.245 66.067 L -58.26 34.882 L -58.26 -27.541 L -4.245 3.653 L -4.245 66.067 Z M 4.244 3.653 L 58.261 -27.531 L 58.261 34.889 L 4.244 66.067 L 4.244 3.653 Z" fill-rule="evenodd" style="stroke-width: 0.34; fill: rgb(255, 255, 255);"/>
 </svg>
