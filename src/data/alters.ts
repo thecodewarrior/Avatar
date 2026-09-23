@@ -9,6 +9,7 @@ export namespace Alters {
     {id: "shimmer", name: "Shimmer", backgroundColor: "#000000"},
     {id: "kate", name: "Kate", backgroundColor: "#000000"},
     {id: "kaylin", name: "Kaylin", backgroundColor: "#3666ff"},
+    {id: "aura", name: "Aura", backgroundColor: "#d839ff"},
     {id: "clover", name: "Clover", backgroundColor: "#00ab00"},
     {id: "ruby", name: "Ruby", backgroundColor: "#BE2627"},
     {id: "jaden", name: "Jaden", backgroundColor: "#03750F"},
