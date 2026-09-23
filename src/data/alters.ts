@@ -37,6 +37,7 @@ export namespace Alters {
     {id: "mille", name: "Mille", backgroundColor: "#ec5000"},
     {id: "claire", name: "Claire", backgroundColor: "#00a857"},
     {id: "aiya", name: "Aiya", backgroundColor: "#0073fa"},
+    {id: "tel", name: "Tel", backgroundColor: "#ff0044"},
     {id: "other", name: "Other", backgroundColor: "#949494"},
   ]
 }
