@@ -40,7 +40,7 @@ function prebuiltUrl(name: string): string {
       />
     </div>
     <div class="mt-2 px-2 py-0.5 rounded text-white font-black" :style="{'background-color': alter.backgroundColor}">
-      Color: {{alter.backgroundColor}}
+      Color: {{alter.backgroundColor.toUpperCase()}}
     </div>
   </div>
 </template>
