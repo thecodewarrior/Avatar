@@ -2,7 +2,8 @@
 <svg id="main-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="500px" height="500px" viewBox="-85 -85 170 170" xmlns:bx="https://boxy-svg.com">
   <defs>
     <bx:export>
-      <bx:file format="png" path="squircle.png" width="500" height="500"/>
+      <bx:file format="png" path="squircle@p3.png" width="500" height="500"/>
+      <bx:file format="png" path="squircle.png" width="500" height="500" colorspace="srgb"/>
     </bx:export>
     <clipPath id="clip-0">
       <path stroke-width="4.04" d="M 0 80.525 C 35.286 80.525 54.902 80.525 67.714 67.713 C 80.526 54.901 80.526 35.285 80.526 -0.001 C 80.526 -35.287 80.526 -54.905 67.714 -67.715 C 54.902 -80.525 35.286 -80.525 0 -80.525 C -35.286 -80.525 -54.902 -80.525 -67.714 -67.715 C -80.526 -54.905 -80.526 -35.287 -80.526 -0.001 C -80.526 35.285 -80.526 54.901 -67.714 67.713 C -54.902 80.525 -35.286 80.525 0 80.525 Z" style="fill: rgb(255, 255, 255); stroke-width: 4.04;"/>

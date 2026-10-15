@@ -18,7 +18,7 @@ function prebuiltUrl(name: string): string {
     <div class="flex gap-2">
       <ImagePreviewLink
           :main-url="prebuiltUrl('circle.png')"
-          :alt-urls="{'SVG': prebuiltUrl('circle.svg')}"
+          :alt-urls="{'SVG': prebuiltUrl('circle.svg'), 'Display P3': prebuiltUrl('circle@p3.png')}"
           :alt-text="alter.name"
           alt-classes="flex text-center items-center justify-center bg-[#949494]"
           :width="100" :height="100"
@@ -26,14 +26,14 @@ function prebuiltUrl(name: string): string {
       />
       <ImagePreviewLink
           :main-url="prebuiltUrl('square.png')"
-          :alt-urls="{'SVG': prebuiltUrl('square.svg')}"
+          :alt-urls="{'SVG': prebuiltUrl('square.svg'), 'Display P3': prebuiltUrl('square@p3.png')}"
           :alt-text="alter.name"
           alt-classes="flex text-center items-center justify-center bg-[#949494]"
           :width="100" :height="100"
       />
       <ImagePreviewLink
           :main-url="prebuiltUrl('squircle.png')"
-          :alt-urls="{'SVG': prebuiltUrl('squircle.svg')}"
+          :alt-urls="{'SVG': prebuiltUrl('squircle.svg'), 'Display P3': prebuiltUrl('squircle@p3.png')}"
           :alt-text="alter.name"
           alt-classes="flex text-center items-center justify-center bg-[#949494]"
           :width="100" :height="100"

@@ -2,7 +2,8 @@
 <svg id="main-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="500px" height="500px" viewBox="-100 -100 200 200" xmlns:bx="https://boxy-svg.com">
   <defs>
     <bx:export>
-      <bx:file format="png" path="circle.png" width="500" height="500"/>
+      <bx:file format="png" path="circle@p3.png" width="500" height="500"/>
+      <bx:file format="png" path="circle.png" width="500" height="500" colorspace="srgb"/>
     </bx:export>
   </defs>
   <rect x="-100" y="-100" width="200" height="200" style="stroke-width: 0.281; fill: oklch(0 0 300);"/>

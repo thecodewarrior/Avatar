@@ -6,7 +6,8 @@
       <stop offset="1" style="stop-color: rgb(12, 12, 117);"/>
     </linearGradient>
     <bx:export>
-      <bx:file format="png" width="500" height="500" path="circle.png"/>
+      <bx:file format="png" path="circle@p3.png" width="500" height="500"/>
+      <bx:file format="png" path="circle.png" width="500" height="500" colorspace="srgb"/>
     </bx:export>
   </defs>
   <rect x="-100" y="-100" width="200" height="200" style="fill: url(&quot;#gradient-6&quot;); stroke-width: 0.281;"/>

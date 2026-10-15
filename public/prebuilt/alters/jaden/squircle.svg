@@ -8,7 +8,8 @@
       <path stroke-width="4.04" d="M 1.999 87.26 C 39.361 87.26 60.131 87.26 73.696 73.695 C 87.262 60.129 87.262 39.359 87.262 1.998 C 87.262 -35.364 87.262 -56.134 73.696 -69.701 C 60.131 -83.261 39.361 -83.261 1.999 -83.261 C -35.362 -83.261 -56.132 -83.261 -69.698 -69.701 C -83.263 -56.134 -83.263 -35.364 -83.263 1.998 C -83.263 39.359 -83.263 60.129 -69.698 73.695 C -56.132 87.26 -35.362 87.26 1.999 87.26 Z" style="fill: rgb(255, 255, 255); stroke-width: 4.278;"/>
     </clipPath>
     <bx:export>
-      <bx:file format="png" path="squircle.png" width="500" height="500"/>
+      <bx:file format="png" path="squircle@p3.png" width="500" height="500"/>
+      <bx:file format="png" path="squircle.png" width="500" height="500" colorspace="srgb"/>
     </bx:export>
     <linearGradient gradientUnits="userSpaceOnUse" x1="0" y1="-100" x2="0" y2="100" id="gradient-1" gradientTransform="matrix(0.9, 0, 0, 0.9, 1.999717, 1.997805)">
       <stop offset="0" style="stop-color: oklch(0.71 0.275 143);"/>

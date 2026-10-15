@@ -6,7 +6,8 @@
       <stop offset="1" style="stop-color: rgb(12, 12, 117);"/>
     </linearGradient>
     <bx:export>
-      <bx:file format="png" path="squircle.png" width="500" height="500"/>
+      <bx:file format="png" path="squircle@p3.png" width="500" height="500"/>
+      <bx:file format="png" path="squircle.png" width="500" height="500" colorspace="srgb"/>
     </bx:export>
     <clipPath id="clip-0">
       <path stroke-width="4.04" d="M -0.001 75.787 C 33.21 75.787 51.672 75.787 63.73 63.729 C 75.789 51.671 75.789 33.209 75.789 -0.002 C 75.789 -33.212 75.789 -51.674 63.73 -63.733 C 51.672 -75.787 33.21 -75.787 -0.001 -75.787 C -33.211 -75.787 -51.673 -75.787 -63.731 -63.733 C -75.79 -51.674 -75.79 -33.212 -75.79 -0.002 C -75.79 33.209 -75.79 51.671 -63.731 63.729 C -51.673 75.787 -33.211 75.787 -0.001 75.787 Z" style="fill: rgb(255, 255, 255); stroke-width: 3.802;"/>

@@ -2,7 +2,8 @@
 <svg id="main-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="500px" height="500px" viewBox="-100 -100 200 200" xmlns:bx="https://boxy-svg.com">
   <defs>
     <bx:export>
-      <bx:file format="png" path="circle.png" width="500" height="500"/>
+      <bx:file format="png" path="circle@p3.png" width="500" height="500"/>
+      <bx:file format="png" path="circle.png" width="500" height="500" colorspace="srgb"/>
     </bx:export>
     <linearGradient gradientUnits="userSpaceOnUse" x1="0" y1="-100" x2="0" y2="100" id="gradient-26" gradientTransform="matrix(1, 0, 0, 1, -0.000668, -0.001858)">
       <stop offset="0" style="stop-color: oklch(0.792 0.27 188);"/>

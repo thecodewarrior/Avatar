@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg id="main-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="500px" height="500px" viewBox="-85 -85 170 170">
   <defs>
+    <bx:export>
+      <bx:file format="png" path="square@p3.png" width="500" height="500"/>
+      <bx:file format="png" path="square.png" width="500" height="500" colorspace="srgb"/>
+    </bx:export>
     <linearGradient gradientUnits="userSpaceOnUse" x1="37.635" y1="-349.78" x2="37.635" y2="361.531" id="gradient-0" gradientTransform="matrix(0.238995, 0, 0, 0.238995, -8.994476, -1.405014)">
       <stop offset="0" style="stop-color: rgb(93, 0, 183);"/>
       <stop offset="1" style="stop-color: rgb(49, 0, 124);"/>

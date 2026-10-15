@@ -5,7 +5,8 @@
       <path d="M 199.69 92.15 L 199.69 107.85 L 174.54 115.97 L 169.69 130.89 L 185.26 152.25 L 176.04 164.94 L 150.91 156.74 L 138.23 165.95 L 138.27 192.39 L 123.34 197.24 L 107.84 175.83 L 92.16 175.83 L 76.66 197.24 L 61.73 192.39 L 61.77 165.95 L 49.09 156.74 L 23.96 164.94 L 14.74 152.25 L 30.31 130.89 L 25.46 115.97 L 0.31 107.85 L 0.31 92.15 L 25.46 84.03 L 30.31 69.11 L 14.74 47.75 L 23.96 35.06 L 49.09 43.26 L 61.77 34.05 L 61.73 7.61 L 76.66 2.76 L 92.16 24.17 L 107.84 24.17 L 123.34 2.76 L 138.27 7.61 L 138.23 34.05 L 150.91 43.26 L 176.04 35.06 L 185.26 47.75 L 169.69 69.11 L 174.54 84.03 Z M 100 80 C 88.954 80 80 88.954 80 100 C 80 111.046 88.954 120 100 120 C 111.046 120 120 111.046 120 100 C 120 88.954 111.046 80 100 80 Z" fill="#FFF"/>
     </symbol>
     <bx:export>
-      <bx:file format="png" path="circle.png" width="500" height="500"/>
+      <bx:file format="png" path="circle@p3.png" width="500" height="500"/>
+      <bx:file format="png" path="circle.png" width="500" height="500" colorspace="srgb"/>
     </bx:export>
     <linearGradient gradientUnits="userSpaceOnUse" x1="0" y1="-100" x2="0" y2="100" id="gradient-1" gradientTransform="matrix(1, 0, 0, 1, 0.000313, -0.00256)">
       <stop offset="0" style="stop-color: oklch(0.71 0.275 143);"/>
