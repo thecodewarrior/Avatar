@@ -20,7 +20,7 @@ export namespace Alters {
     {id: "stella", name: "Stella", backgroundColor: "#F45DE8"},
     {id: "constellation", name: "Constellation", backgroundColor: "#49009C"},
     {id: "ivy", name: "Ivy", backgroundColor: "#01A00A"},
-    {id: "thorne", name: "Thorne", backgroundColor: "#011793"},
+    {id: "thorne", name: "Thorne", backgroundColor: "#004688"},
     {id: "selee", name: "Selee", backgroundColor: "#28089b"},
     {id: "amber", name: "Amber", backgroundColor: "#c58900"},
     {id: "ripple", name: "Ripple", backgroundColor: "#0076fb"},
