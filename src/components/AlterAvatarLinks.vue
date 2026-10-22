@@ -38,6 +38,30 @@ function prebuiltUrl(name: string): string {
           alt-classes="flex text-center items-center justify-center bg-[#949494]"
           :width="100" :height="100"
       />
+      <template v-if="alter.animated">
+        <ImagePreviewLink
+            :main-url="prebuiltUrl('animated/circle.webp')"
+            :alt-urls="{'SVG': prebuiltUrl('animated/squircle.svg'), 'GIF': prebuiltUrl('circle.gif')}"
+            :alt-text="alter.name"
+            alt-classes="flex text-center items-center justify-center bg-[#949494]"
+            :width="100" :height="100"
+            rounded
+        />
+        <ImagePreviewLink
+            :main-url="prebuiltUrl('animated/square.webp')"
+            :alt-urls="{'SVG': prebuiltUrl('animated/square.svg'), 'GIF': prebuiltUrl('square.gif')}"
+            :alt-text="alter.name"
+            alt-classes="flex text-center items-center justify-center bg-[#949494]"
+            :width="100" :height="100"
+        />
+        <ImagePreviewLink
+            :main-url="prebuiltUrl('animated/squircle.webp')"
+            :alt-urls="{'SVG': prebuiltUrl('animated/squircle.svg'), 'GIF': prebuiltUrl('squircle.gif')}"
+            :alt-text="alter.name"
+            alt-classes="flex text-center items-center justify-center bg-[#949494]"
+            :width="100" :height="100"
+        />
+      </template>
     </div>
     <div class="mt-2 px-2 py-0.5 rounded text-white font-black" :style="{'background-color': alter.backgroundColor}">
       Color: {{alter.backgroundColor.toUpperCase()}}

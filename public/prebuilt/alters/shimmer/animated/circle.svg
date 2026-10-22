@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg id="main-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="500px" height="500px" viewBox="-100 -100 200 200" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <bx:export>
+      <bx:file format="png" path="00.png" width="500" height="500" colorspace="srgb" animation="4"/>
+      <bx:file format="png" path="01.png" width="500" height="500" colorspace="srgb" animation="4.03333333"/>
+      <bx:file format="png" path="02.png" width="500" height="500" colorspace="srgb" animation="4.06666666"/>
+      <bx:file format="png" path="03.png" width="500" height="500" colorspace="srgb" animation="4.10000000"/>
+      <bx:file format="png" path="04.png" width="500" height="500" colorspace="srgb" animation="4.13333333"/>
+      <bx:file format="png" path="05.png" width="500" height="500" colorspace="srgb" animation="4.16666666"/>
+      <bx:file format="png" path="06.png" width="500" height="500" colorspace="srgb" animation="4.20000000"/>
+      <bx:file format="png" path="07.png" width="500" height="500" colorspace="srgb" animation="4.23333333"/>
+      <bx:file format="png" path="08.png" width="500" height="500" colorspace="srgb" animation="4.26666666"/>
+      <bx:file format="png" path="09.png" width="500" height="500" colorspace="srgb" animation="4.30000000"/>
+      <bx:file format="png" path="10.png" width="500" height="500" colorspace="srgb" animation="4.33333333"/>
+      <bx:file format="png" path="11.png" width="500" height="500" colorspace="srgb" animation="4.36666666"/>
+      <bx:file format="png" path="12.png" width="500" height="500" colorspace="srgb" animation="4.40000000"/>
+      <bx:file format="png" path="13.png" width="500" height="500" colorspace="srgb" animation="4.43333333"/>
+      <bx:file format="png" path="14.png" width="500" height="500" colorspace="srgb" animation="4.46666666"/>
+      <bx:file format="png" path="15.png" width="500" height="500" colorspace="srgb" animation="4.50000000"/>
+      <bx:file format="png" path="16.png" width="500" height="500" colorspace="srgb" animation="4.53333333"/>
+      <bx:file format="png" path="17.png" width="500" height="500" colorspace="srgb" animation="4.56666666"/>
+      <bx:file format="png" path="18.png" width="500" height="500" colorspace="srgb" animation="4.60000000"/>
+      <bx:file format="png" path="19.png" width="500" height="500" colorspace="srgb" animation="4.63333333"/>
+      <bx:file format="png" path="20.png" width="500" height="500" colorspace="srgb" animation="4.66666666"/>
+      <bx:file format="png" path="21.png" width="500" height="500" colorspace="srgb" animation="4.70000000"/>
+      <bx:file format="png" path="22.png" width="500" height="500" colorspace="srgb" animation="4.73333333"/>
+      <bx:file format="png" path="23.png" width="500" height="500" colorspace="srgb" animation="4.76666666"/>
+      <bx:file format="png" path="24.png" width="500" height="500" colorspace="srgb" animation="4.80000000"/>
+      <bx:file format="png" path="25.png" width="500" height="500" colorspace="srgb" animation="4.83333333"/>
+      <bx:file format="png" path="26.png" width="500" height="500" colorspace="srgb" animation="4.86666666"/>
+      <bx:file format="png" path="27.png" width="500" height="500" colorspace="srgb" animation="4.90000000"/>
+      <bx:file format="png" path="28.png" width="500" height="500" colorspace="srgb" animation="4.93333333"/>
+      <bx:file format="png" path="29.png" width="500" height="500" colorspace="srgb" animation="4.96666666"/>
+    </bx:export>
+  </defs>
+  <rect x="-100" y="-100" width="200" height="200" style="stroke-width: 0.281; fill: oklch(0 0 300);"/>
+  <g>
+    <g>
+      <animateTransform type="translate" additive="sum" attributeName="transform" values="0 0;52.2 20.8;0 0;-52.2 -20.8;0 0" begin="0s" dur="4s" keyTimes="0; 0.25; 0.5; 0.75; 1" calcMode="spline" keySplines="0.61 1 0.88 1; 0.12 0 0.39 0; 0.61 1 0.88 1; 0.12 0 0.39 0" fill="freeze" repeatCount="indefinite"/>
+      <path d="M -31.319 -31.324 C -3.039 -3.037 -31.696 29.326 -62.3 62.307 C -29.32 31.659 3.031 3.036 31.32 31.322 C 3.04 3.036 31.694 -29.327 62.3 -62.307 C 29.318 -31.69 -3.031 -3.037 -31.319 -31.324 Z" fill-rule="evenodd" style="stroke-width: 0.4; fill: rgb(255, 255, 255);"/>
+      <animateTransform type="scale" additive="sum" attributeName="transform" values="1 1;0.59 0.59;0.35 0.35;0.59 0.59;1 1" begin="0s" dur="4s" fill="freeze" keyTimes="0; 0.25; 0.50021; 0.75; 1" calcMode="spline" keySplines="0.12 0 0.39 0; 0.61 1 0.88 1; 0.12 0 0.39 0; 0.61 1 0.88 1" repeatCount="indefinite"/>
+    </g>
+    <g>
+      <animateTransform type="translate" additive="sum" attributeName="transform" values="0 0;52.2 20.8;0 0;-52.2 -20.8;0 0" dur="4s" keyTimes="0; 0.25; 0.5; 0.75; 1" calcMode="spline" keySplines="0.61 1 0.88 1; 0.12 0 0.39 0; 0.61 1 0.88 1; 0.12 0 0.39 0" fill="freeze" repeatCount="indefinite" begin="1s"/>
+      <path d="M -31.319 -31.324 C -3.039 -3.037 -31.696 29.326 -62.3 62.307 C -29.32 31.659 3.031 3.036 31.32 31.322 C 3.04 3.036 31.694 -29.327 62.3 -62.307 C 29.318 -31.69 -3.031 -3.037 -31.319 -31.324 Z" fill-rule="evenodd" style="stroke-width: 0.4; fill: rgb(255, 255, 255);"/>
+      <animateTransform type="scale" additive="sum" attributeName="transform" values="1 1;0.59 0.59;0.35 0.35;0.59 0.59;1 1" dur="4s" fill="freeze" keyTimes="0; 0.25; 0.50021; 0.75; 1" calcMode="spline" keySplines="0.12 0 0.39 0; 0.61 1 0.88 1; 0.12 0 0.39 0; 0.61 1 0.88 1" repeatCount="indefinite" begin="1s"/>
+    </g>
+    <g>
+      <animateTransform type="translate" additive="sum" attributeName="transform" values="0 0;52.2 20.8;0 0;-52.2 -20.8;0 0" dur="4s" keyTimes="0; 0.25; 0.5; 0.75; 1" calcMode="spline" keySplines="0.61 1 0.88 1; 0.12 0 0.39 0; 0.61 1 0.88 1; 0.12 0 0.39 0" fill="freeze" repeatCount="indefinite" begin="2s"/>
+      <path d="M -31.319 -31.324 C -3.039 -3.037 -31.696 29.326 -62.3 62.307 C -29.32 31.659 3.031 3.036 31.32 31.322 C 3.04 3.036 31.694 -29.327 62.3 -62.307 C 29.318 -31.69 -3.031 -3.037 -31.319 -31.324 Z" fill-rule="evenodd" style="stroke-width: 0.4; fill: rgb(255, 255, 255);"/>
+      <animateTransform type="scale" additive="sum" attributeName="transform" values="1 1;0.59 0.59;0.35 0.35;0.59 0.59;1 1" dur="4s" fill="freeze" keyTimes="0; 0.25; 0.50021; 0.75; 1" calcMode="spline" keySplines="0.12 0 0.39 0; 0.61 1 0.88 1; 0.12 0 0.39 0; 0.61 1 0.88 1" repeatCount="indefinite" begin="2s"/>
+    </g>
+    <g>
+      <animateTransform type="translate" additive="sum" attributeName="transform" values="0 0;52.2 20.8;0 0;-52.2 -20.8;0 0" dur="4s" keyTimes="0; 0.25; 0.5; 0.75; 1" calcMode="spline" keySplines="0.61 1 0.88 1; 0.12 0 0.39 0; 0.61 1 0.88 1; 0.12 0 0.39 0" fill="freeze" repeatCount="indefinite" begin="3s"/>
+      <path d="M -31.319 -31.324 C -3.039 -3.037 -31.696 29.326 -62.3 62.307 C -29.32 31.659 3.031 3.036 31.32 31.322 C 3.04 3.036 31.694 -29.327 62.3 -62.307 C 29.318 -31.69 -3.031 -3.037 -31.319 -31.324 Z" fill-rule="evenodd" style="stroke-width: 0.4; fill: rgb(255, 255, 255);"/>
+      <animateTransform type="scale" additive="sum" attributeName="transform" values="1 1;0.59 0.59;0.35 0.35;0.59 0.59;1 1" dur="4s" fill="freeze" keyTimes="0; 0.25; 0.50021; 0.75; 1" calcMode="spline" keySplines="0.12 0 0.39 0; 0.61 1 0.88 1; 0.12 0 0.39 0; 0.61 1 0.88 1" repeatCount="indefinite" begin="3s"/>
+    </g>
+  </g>
+</svg>
