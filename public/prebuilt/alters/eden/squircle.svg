@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg id="main-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="500px" height="500px" viewBox="-85 -85 170 170" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <bx:export>
+      <bx:file format="png" path="squircle@p3.png" width="500" height="500"/>
+      <bx:file format="png" path="squircle.png" width="500" height="500" colorspace="srgb"/>
+    </bx:export>
+    <clipPath id="clip-0">
+      <path stroke-width="4.04" d="M 0 80.525 C 35.286 80.525 54.902 80.525 67.714 67.713 C 80.526 54.901 80.526 35.285 80.526 -0.001 C 80.526 -35.287 80.526 -54.905 67.714 -67.715 C 54.902 -80.525 35.286 -80.525 0 -80.525 C -35.286 -80.525 -54.902 -80.525 -67.714 -67.715 C -80.526 -54.905 -80.526 -35.287 -80.526 -0.001 C -80.526 35.285 -80.526 54.901 -67.714 67.713 C -54.902 80.525 -35.286 80.525 0 80.525 Z" style="fill: rgb(255, 255, 255); stroke-width: 4.04;"/>
+    </clipPath>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="37.635" y1="-349.78" x2="37.635" y2="361.531" id="gradient-38" gradientTransform="matrix(0.239038, 0, 0, 0.239038, -141.763767, -1.390844)">
+      <stop offset="0" style="stop-color: oklch(0.983 0.267 300);"/>
+      <stop offset="1" style="stop-color: oklch(0.524 0.161 298);"/>
+    </linearGradient>
+  </defs>
+  <g style="clip-path: url(&quot;#clip-0&quot;);">
+    <rect x="-85" y="-85" width="170" height="170" style="stroke-width: 0.85; fill: url(&quot;#gradient-38&quot;);"/>
+    <path d="M 51.717 -36.429 L 51.717 -13.021 L 17.104 -13.021 C 16.065 -13.021 15.228 -12.179 15.228 -11.151 L 15.228 44.128 L -8.176 22.488 L -8.176 -11.151 C -8.176 -12.193 -9.02 -13.021 -10.054 -13.021 L -44.665 -13.021 L -44.665 -36.429 L -10.054 -36.429 C -9.015 -36.429 -8.176 -37.268 -8.176 -38.31 L -8.176 -68.004 L 15.228 -68.004 L 15.228 -38.31 C 15.228 -37.268 16.072 -36.429 17.104 -36.429 L 51.717 -36.429 Z M -2.153 65.496 L -25.558 65.496 L -25.558 13.234 L -2.153 34.874 L -2.153 65.496 Z" style="stroke-width: 0.34; fill: rgb(255, 255, 255); transform-origin: 3.526px -1.254px;" transform="matrix(0.997288, -0.073596, 0.073596, 0.997288, 0, 0)"/>
+  </g>
+</svg>
